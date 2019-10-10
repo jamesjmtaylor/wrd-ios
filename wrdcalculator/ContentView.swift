@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selection = 0
- 
+
     var body: some View {
         TabView(selection: $selection){
             Text("First View")
@@ -18,7 +18,7 @@ struct ContentView: View {
                 .tabItem {
                     VStack {
                         Image("first")
-                        Text("First")
+                        Text("KE")
                     }
                 }
                 .tag(0)
@@ -27,13 +27,31 @@ struct ContentView: View {
                 .tabItem {
                     VStack {
                         Image("second")
-                        Text("Second")
+                        Text("HEAT")
                     }
                 }
                 .tag(1)
+            Text("First View")
+                    .font(.title)
+                    .tabItem {
+                        VStack {
+                            Image("first")
+                            Text("ECM")
+                        }
+                    }
+                    .tag(0)
+                Text("Second View")
+                    .font(.title)
+                    .tabItem {
+                        VStack {
+                            Image("second")
+                            Text("Contact")
+                        }
+                    }
+                    .tag(1)
+            }
         }
     }
-}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
