@@ -9,6 +9,6 @@
 import Foundation
 class ContactViewModel {
     func navTo(url: String) {
-        window.location=url;
+        
     }
 }

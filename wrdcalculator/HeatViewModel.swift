@@ -9,24 +9,21 @@
 import Foundation
 
 class HeatViewModel {
-    var ar : Int
-    var ap : Int
-    var d : Int
+    var ar : Double = 0
+    var ap : Double = 0
+    var d = ""
 
     func inputChanged() {
-        if (parseFloat(this.ar)==1){
-            this.d = Math.round(parseFloat(this.ap)) || 0;
-        } else if (parseFloat(this.ar)===0){
-            this.d = Math.round(parseFloat(this.ap)*2) || 0;
-        } else if (parseFloat(this.ap)-parseFloat(this.ar)>=10){
-            this.d = Math.round(
-                6+parseFloat(this.ap)-10-parseFloat(this.ar)) || 0;
-        } else if (parseFloat(this.ap)-parseFloat(this.ar)<10 &&
-            parseFloat(this.ap)-parseFloat(this.ar)>=1){
-            this.d = Math.round(
-                (parseFloat(this.ap)-parseFloat(this.ar))/2 + 1) || 0;
+        if ar==1 {
+            d = round(ap).description
+        } else if ar==0 {
+            d = round(ap * 2).description
+        } else if (ap-ar)>=10{
+            d = round(6 + ap - 10 - ar).description
+        } else if ap-ar < 10 && ap - ar >= 1 {
+            d = round((ap - ar)/2 + 1).description
         } else {
-            this.d = 0;
+            d = 0.description;
         }
     }
 }

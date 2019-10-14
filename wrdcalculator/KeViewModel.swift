@@ -8,28 +8,26 @@
 
 import Foundation
 class KeViewModel {
-    var ap : Int
-    var ar : Int
-    var ra : Int
-    var tr : Int
-    var d : Int
+    var ap = 0.0
+    var ar = 0.0
+    var weaponRange : Int = 0
+    var targetRange : Int = 0
+    var d = ""
 
     func inputChanged() {
-        if (parseFloat(this.ra) < parseFloat(this.tr)){
-            this.d = "Out of Range";
-        } else { //TODO: Add type checking on vars here.
-            var difference : number =
-                (parseFloat(this.ra) - parseFloat(this.tr))/175
-            //console.log("Difference is equal to",difference)
-            var actualAp : number = parseFloat(this.ap) + difference
-            //console.log("actual AP is equal to",actualAp)
-            if (actualAp < parseFloat(this.ar)){
-                this.d = "Inefficient" || 0
-            } else if (this.ar == 0){
-                this.d = Math.round(actualAp*2) || 0
+        if (weaponRange < targetRange){
+            d = "Out of Range";
+        } else {
+            let difference = (weaponRange - targetRange) / 175
+            //print("Difference is equal to",difference)
+            let actualAp = ap + Double(difference)
+            //print("actual AP is equal to",actualAp)
+            if (actualAp < ar){
+                d = "Inefficient"
+            } else if (ar == 0){
+                d = round(actualAp * 2).description
             } else {
-                this.d = Math.round((actualAp
-                    - parseInt(this.ar))/2+1) || 0
+                d = round((actualAp - ar) / 2 + 1.0).description
             }
         }
     }

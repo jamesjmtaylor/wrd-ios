@@ -7,56 +7,56 @@
 //
 
 import Foundation
-class EcmViewModel {
-    var vet : Int = 0
-    var ecm : Int = 100
-    var acc : Int
-    var missiles : Int
-    var hits : Int
-    var chances : Int = 0;
 
-    func productRange(a: Int, b: Int) -> Int {
+class EcmViewModel {
+    var vet = 0.0
+    var ecm = 100.0
+    var acc = 0.0
+    var missiles = 0.0
+    var hits = 0.0
+    var chances = 0.0
+
+    func productRange(a: Double, b: Double) -> Double {
         var product = a, i = a;
 
-        while (i++<b){
-            product*=i;
+        while (i<b){
+            i += 1
+            product*=i
         }
         return product;
     }
 
-    func combinations(n: Int, k: Int) -> Int {
-        if (n==k) {
+    func combinations(n: Double, k: Double) -> Double {
+        var i = k
+        if (n==i) {
             return 1;
         } else {
-            k = Math.max(k,n-k);
-            return this.productRange(k+1,n) / this.productRange(1, n-k);
+            i = max(i,n-i);
+            return productRange(a: i+1,b: n) / productRange(a: 1, b: n-i);
         }
     }
 
-    func binomProbability(f: Int, h: Int, hitRate: Int) -> Int{
-        return this.combinations(f,h)*Math.pow(hitRate,h)*Math.pow(1.0-hitRate,(f-h));
+    func binomProbability(f: Double, h: Double, hitRate: Double) -> Double{
+        return combinations(n: f,k: h) * pow(Double(hitRate),h) * pow(1.0-hitRate,(f-h));
     }
 
-    func bpAtLeast(f: Int, h: Int, hitRate: Int) -> Int {
-        var ret = 0
-        var i = h
-        for i in i ... f {
-            ret += this.binomProbability(f,i,hitRate);
+    func bpAtLeast(f: Double, h: Double, hitRate: Double) -> Double {
+        var ret = 0.0
+        let hits = Int(h)
+        let fired = Int(f)
+        for hits in hits ... fired {
+            ret += binomProbability(f: f, h: Double(hits), hitRate: hitRate);
         }
         return ret;
     }
 
     func updateChances(){
-        var fired = parseInt(this.missiles);
-        var hit = parseInt(this.hits);
-        var accuracy = parseInt(this.acc);
-        var hitRate = (accuracy/100)
-            * parseFloat(this.vet)
-            * (1 - parseFloat(this.ecm));
+        let hitRate = acc/100
+            * vet
+            * (1 - ecm)
 
-        var c = Math.round(this.bpAtLeast(fired,hit,hitRate) * 100);
-        c = (c>100) ? 100 : c;
-        this.chances = c || 0;
+        let c = round(bpAtLeast(f: missiles, h: hits, hitRate: hitRate) * 100.0);
+        chances = (c > 100) ? 100 : c
 
         /*     console.log("Veterancy:",this.vet,
          "ECM:",this.ecm,
@@ -66,13 +66,12 @@ class EcmViewModel {
          "CHANCES:",this.chances);*/
     }
 
-    func vetClicked(veterancy: Int) {
-        this.vet = veterancy;
-        this.updateChances();
+    func vetClicked(veterancy: Double) {
+        vet = veterancy;
+        updateChances();
     }
-    func ecmClicked(ecm: Int) {
-        //const target = <HTMLElement> event.target;
-        this.ecm = ecm;
-        this.updateChances();
+    func ecmClicked(ecm: Double) {
+        self.ecm = ecm
+        updateChances();
     }
 }
