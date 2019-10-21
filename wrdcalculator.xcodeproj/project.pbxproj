@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F3F379C235D398500E0B2DA /* NumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3F379B235D398500E0B2DA /* NumberTextField.swift */; };
+		8F3F37A2235D3BBB00E0B2DA /* HeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF5459B235B65250035BC6C /* HeatView.swift */; };
+		8F3F37A3235D3BC500E0B2DA /* KeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF54599235B5E200035BC6C /* KeView.swift */; };
 		8F7DB4B3234F5A3B005D93ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4B2234F5A3B005D93ED /* AppDelegate.swift */; };
 		8F7DB4B5234F5A3B005D93ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4B4234F5A3B005D93ED /* SceneDelegate.swift */; };
 		8F7DB4B7234F5A3B005D93ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4B6234F5A3B005D93ED /* ContentView.swift */; };
@@ -45,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F3F379B235D398500E0B2DA /* NumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTextField.swift; sourceTree = "<group>"; };
 		8F7DB4AF234F5A3B005D93ED /* wrdcalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wrdcalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7DB4B2234F5A3B005D93ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F7DB4B4234F5A3B005D93ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +96,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F3F379D235D3B5A00E0B2DA /* UtilViews */ = {
+			isa = PBXGroup;
+			children = (
+				8F3F379B235D398500E0B2DA /* NumberTextField.swift */,
+			);
+			path = UtilViews;
+			sourceTree = "<group>";
+		};
+		8F3F379E235D3B7800E0B2DA /* KeTab */ = {
+			isa = PBXGroup;
+			children = (
+				8FF54599235B5E200035BC6C /* KeView.swift */,
+				8FCEBAC02350AA6A00A726E7 /* KeViewModel.swift */,
+			);
+			path = KeTab;
+			sourceTree = "<group>";
+		};
+		8F3F379F235D3B7E00E0B2DA /* HeatTab */ = {
+			isa = PBXGroup;
+			children = (
+				8FCEBAB72350AA4C00A726E7 /* HeatViewModel.swift */,
+				8FF5459B235B65250035BC6C /* HeatView.swift */,
+			);
+			path = HeatTab;
+			sourceTree = "<group>";
+		};
+		8F3F37A0235D3B8600E0B2DA /* EcmTab */ = {
+			isa = PBXGroup;
+			children = (
+				8FCEBABD2350AA6200A726E7 /* EcmViewModel.swift */,
+			);
+			path = EcmTab;
+			sourceTree = "<group>";
+		};
+		8F3F37A1235D3B8E00E0B2DA /* ContactTab */ = {
+			isa = PBXGroup;
+			children = (
+				8FCEBABA2350AA5800A726E7 /* ContactViewModel.swift */,
+			);
+			path = ContactTab;
+			sourceTree = "<group>";
+		};
 		8F7DB4A6234F5A3B005D93ED = {
 			isa = PBXGroup;
 			children = (
@@ -115,8 +161,11 @@
 		8F7DB4B1234F5A3B005D93ED /* wrdcalculator */ = {
 			isa = PBXGroup;
 			children = (
-				8FF54599235B5E200035BC6C /* KeView.swift */,
-				8FF5459B235B65250035BC6C /* HeatView.swift */,
+				8F3F37A1235D3B8E00E0B2DA /* ContactTab */,
+				8F3F37A0235D3B8600E0B2DA /* EcmTab */,
+				8F3F379F235D3B7E00E0B2DA /* HeatTab */,
+				8F3F379E235D3B7800E0B2DA /* KeTab */,
+				8F3F379D235D3B5A00E0B2DA /* UtilViews */,
 				8F7DB4B2234F5A3B005D93ED /* AppDelegate.swift */,
 				8F7DB4B4234F5A3B005D93ED /* SceneDelegate.swift */,
 				8F7DB4B6234F5A3B005D93ED /* ContentView.swift */,
@@ -124,10 +173,6 @@
 				8F7DB4BD234F5A3B005D93ED /* LaunchScreen.storyboard */,
 				8F7DB4C0234F5A3B005D93ED /* Info.plist */,
 				8F7DB4BA234F5A3B005D93ED /* Preview Content */,
-				8FCEBAB72350AA4C00A726E7 /* HeatViewModel.swift */,
-				8FCEBABA2350AA5800A726E7 /* ContactViewModel.swift */,
-				8FCEBABD2350AA6200A726E7 /* EcmViewModel.swift */,
-				8FCEBAC02350AA6A00A726E7 /* KeViewModel.swift */,
 			);
 			path = wrdcalculator;
 			sourceTree = "<group>";
@@ -297,6 +342,7 @@
 				8F7DB4B5234F5A3B005D93ED /* SceneDelegate.swift in Sources */,
 				8FCEBAC12350AA6A00A726E7 /* KeViewModel.swift in Sources */,
 				8FCEBABE2350AA6200A726E7 /* EcmViewModel.swift in Sources */,
+				8F3F379C235D398500E0B2DA /* NumberTextField.swift in Sources */,
 				8F7DB4B7234F5A3B005D93ED /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +351,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F3F37A3235D3BC500E0B2DA /* KeView.swift in Sources */,
+				8F3F37A2235D3BBB00E0B2DA /* HeatView.swift in Sources */,
 				8FCEBAB92350AA4C00A726E7 /* HeatViewModel.swift in Sources */,
 				8FCEBAC22350AA6A00A726E7 /* KeViewModel.swift in Sources */,
 				8FCEBABC2350AA5800A726E7 /* ContactViewModel.swift in Sources */,

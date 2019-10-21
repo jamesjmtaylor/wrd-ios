@@ -6,28 +6,29 @@
 //  Copyright © 2019 James Taylor. All rights reserved.
 //
 
-import Foundation
-class KeViewModel {
+import SwiftUI
+
+class KeViewModel: ObservableObject {
     var ap = 0.0
-    var ar = 0.0
+    var targetArmor = 0.0
     var weaponRange : Int = 0
     var targetRange : Int = 0
-    var d = ""
+    @Published var damage = ""
 
     func inputChanged() {
         if (weaponRange < targetRange){
-            d = "Out of Range";
+            damage = "Out of Range";
         } else {
             let difference = (weaponRange - targetRange) / 175
             //print("Difference is equal to",difference)
             let actualAp = ap + Double(difference)
             //print("actual AP is equal to",actualAp)
-            if (actualAp < ar){
-                d = "Inefficient"
-            } else if (ar == 0){
-                d = round(actualAp * 2).description
+            if (actualAp < targetArmor){
+                damage = "Inefficient"
+            } else if (targetArmor == 0){
+                damage = round(actualAp * 2).description
             } else {
-                d = round((actualAp - ar) / 2 + 1.0).description
+                damage = round((actualAp - targetArmor) / 2 + 1.0).description
             }
         }
     }

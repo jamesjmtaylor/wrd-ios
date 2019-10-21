@@ -9,8 +9,17 @@
 import SwiftUI
 
 struct KeView: View {
+    @ObservedObject var vm = KeViewModel()
+    @State var ap :String = ""
     var body: some View {
-        Text("KE View")
+
+        VStack {
+            Image("ke")
+            TextField("Weapon AP", text: $ap)
+            NumberTextField(placeholderText: "Weapon AP")
+            
+            Text("KE View")
+        }
     }
 }
 
