@@ -9,25 +9,24 @@
 import SwiftUI
 
 struct NumberTextField: View {
-    @State var numberValue: Double?
-    var placeholderText: String
+    @State var numberValue: Int?
+    var placeholderText: String?
 
     var body: some View {
         let numberString = Binding<String>(
-            get: { String(format: "%.02f", Double(self.numberValue ?? 0.0)) },
+            get: {
+                guard let value = self.numberValue else {return ""}
+                return String(format: "%d", value)
+            },
             set: {
                 if let value = NumberFormatter().number(from: $0) {
-                    self.numberValue = value.doubleValue
+                    self.numberValue = value.intValue
                 }
             }
         )
 
-        return VStack {
-            TextField(placeholderText, text: numberString)
-                .keyboardType(/*@START_MENU_TOKEN@*/.decimalPad/*@END_MENU_TOKEN@*/)
+        return TextField(placeholderText ?? "", text: numberString).keyboardType(.numberPad)
 
-            Text("number: \(numberValue ?? 0.0)")
-        }
       }
 }
 

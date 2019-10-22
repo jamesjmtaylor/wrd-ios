@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8F3F379C235D398500E0B2DA /* NumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3F379B235D398500E0B2DA /* NumberTextField.swift */; };
 		8F3F37A2235D3BBB00E0B2DA /* HeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF5459B235B65250035BC6C /* HeatView.swift */; };
-		8F3F37A3235D3BC500E0B2DA /* KeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF54599235B5E200035BC6C /* KeView.swift */; };
 		8F7DB4B3234F5A3B005D93ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4B2234F5A3B005D93ED /* AppDelegate.swift */; };
 		8F7DB4B5234F5A3B005D93ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4B4234F5A3B005D93ED /* SceneDelegate.swift */; };
 		8F7DB4B7234F5A3B005D93ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4B6234F5A3B005D93ED /* ContentView.swift */; };
@@ -351,7 +350,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F3F37A3235D3BC500E0B2DA /* KeView.swift in Sources */,
 				8F3F37A2235D3BBB00E0B2DA /* HeatView.swift in Sources */,
 				8FCEBAB92350AA4C00A726E7 /* HeatViewModel.swift in Sources */,
 				8FCEBAC22350AA6A00A726E7 /* KeViewModel.swift in Sources */,
