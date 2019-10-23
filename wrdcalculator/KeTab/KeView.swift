@@ -18,26 +18,26 @@ struct KeView: View {
                 Image("ke")
                 VStack(alignment: .leading) {
                     Text("Weapon AP")
-                    NumberTextField(numberValue: ap, placeholderText: "Weapon AP")
+                    NumberTextField(numberValue: $vm.ap, placeholderText: "Weapon AP")
                     Divider()
                 }.padding(.leading)
 
                 VStack(alignment: .leading){
                     Text("Target Armor")
-                    NumberTextField(numberValue: ap, placeholderText: "Target Armor")
+                    NumberTextField(numberValue: $vm.targetArmor, placeholderText: "Target Armor")
                     Divider()
                 }.padding(.leading)
                 VStack(alignment: .leading) {
                     Text("Weapon Max Range")
-                    NumberTextField(numberValue: ap, placeholderText: "Weapon Max Range")
+                    NumberTextField(numberValue: $vm.weaponRange, placeholderText: "Weapon Max Range")
                     Divider()
                 }.padding(.leading)
                 VStack(alignment: .leading){
                     Text("Range to Target")
-                    NumberTextField(numberValue: ap, placeholderText: "Range to Target")
+                    NumberTextField(numberValue: $vm.targetRange, placeholderText: "Range to Target")
                     Divider()
                 }.padding(.leading)
-                Text("Damage: 0")
+                Text(vm.damage)
                     .foregroundColor(Color.white)
                     .padding()
                     .background(Color.blue)
