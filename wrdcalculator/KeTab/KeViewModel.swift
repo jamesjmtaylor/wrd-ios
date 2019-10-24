@@ -10,14 +10,17 @@ import SwiftUI
 import Combine
 
 class KeViewModel: ObservableObject {
-    var ap = 0 { didSet {inputChanged()}}
-    var targetArmor = 0 { didSet {inputChanged()}}
-    var weaponRange = 0 { didSet {inputChanged()}}
-    var targetRange = 0 { didSet {inputChanged()}}
-    @Published var damage = "Damage: 0"
+    var ap : Int? { didSet {inputChanged()}}
+    var targetArmor  : Int? { didSet {inputChanged()}}
+    var weaponRange  : Int? { didSet {inputChanged()}}
+    var targetRange  : Int? { didSet {inputChanged()}}
+    var damage = "Damage: 0"
     let didChange = PassthroughSubject<KeViewModel, Never>()
 
     func inputChanged() {
+        guard let ap = ap,
+            let weaponRange = weaponRange,
+            let targetRange = targetRange, let targetArmor = targetArmor else {return}
         if (weaponRange < targetRange){
             damage = "Out of Range";
         } else {

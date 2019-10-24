@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8F3F379C235D398500E0B2DA /* NumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3F379B235D398500E0B2DA /* NumberTextField.swift */; };
+		8F3F379C235D398500E0B2DA /* BindableNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3F379B235D398500E0B2DA /* BindableNumberTextField.swift */; };
 		8F3F37A2235D3BBB00E0B2DA /* HeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF5459B235B65250035BC6C /* HeatView.swift */; };
 		8F7DB4B3234F5A3B005D93ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4B2234F5A3B005D93ED /* AppDelegate.swift */; };
 		8F7DB4B5234F5A3B005D93ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4B4234F5A3B005D93ED /* SceneDelegate.swift */; };
@@ -17,6 +17,7 @@
 		8F7DB4BF234F5A3B005D93ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F7DB4BD234F5A3B005D93ED /* LaunchScreen.storyboard */; };
 		8F7DB4CA234F5A3C005D93ED /* wrdcalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4C9234F5A3C005D93ED /* wrdcalculatorTests.swift */; };
 		8F7DB4D5234F5A3C005D93ED /* wrdcalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4D4234F5A3C005D93ED /* wrdcalculatorUITests.swift */; };
+		8FC01FFA2361D145005D1AE5 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC01FF92361D145005D1AE5 /* HostingController.swift */; };
 		8FCEBAB82350AA4C00A726E7 /* HeatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBAB72350AA4C00A726E7 /* HeatViewModel.swift */; };
 		8FCEBAB92350AA4C00A726E7 /* HeatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBAB72350AA4C00A726E7 /* HeatViewModel.swift */; };
 		8FCEBABB2350AA5800A726E7 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBABA2350AA5800A726E7 /* ContactViewModel.swift */; };
@@ -47,7 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8F3F379B235D398500E0B2DA /* NumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTextField.swift; sourceTree = "<group>"; };
+		8F3F379B235D398500E0B2DA /* BindableNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableNumberTextField.swift; sourceTree = "<group>"; };
 		8F7DB4AF234F5A3B005D93ED /* wrdcalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wrdcalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7DB4B2234F5A3B005D93ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F7DB4B4234F5A3B005D93ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		8F7DB4D0234F5A3C005D93ED /* wrdcalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wrdcalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7DB4D4234F5A3C005D93ED /* wrdcalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wrdcalculatorUITests.swift; sourceTree = "<group>"; };
 		8F7DB4D6234F5A3C005D93ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FC01FF92361D145005D1AE5 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		8FCEBAB72350AA4C00A726E7 /* HeatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatViewModel.swift; sourceTree = "<group>"; };
 		8FCEBABA2350AA5800A726E7 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		8FCEBABD2350AA6200A726E7 /* EcmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcmViewModel.swift; sourceTree = "<group>"; };
@@ -95,12 +97,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8F3F379D235D3B5A00E0B2DA /* UtilViews */ = {
+		8F3F379D235D3B5A00E0B2DA /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				8F3F379B235D398500E0B2DA /* NumberTextField.swift */,
+				8F3F379B235D398500E0B2DA /* BindableNumberTextField.swift */,
+				8FC01FF92361D145005D1AE5 /* HostingController.swift */,
 			);
-			path = UtilViews;
+			path = Util;
 			sourceTree = "<group>";
 		};
 		8F3F379E235D3B7800E0B2DA /* KeTab */ = {
@@ -164,7 +167,7 @@
 				8F3F37A0235D3B8600E0B2DA /* EcmTab */,
 				8F3F379F235D3B7E00E0B2DA /* HeatTab */,
 				8F3F379E235D3B7800E0B2DA /* KeTab */,
-				8F3F379D235D3B5A00E0B2DA /* UtilViews */,
+				8F3F379D235D3B5A00E0B2DA /* Util */,
 				8F7DB4B2234F5A3B005D93ED /* AppDelegate.swift */,
 				8F7DB4B4234F5A3B005D93ED /* SceneDelegate.swift */,
 				8F7DB4B6234F5A3B005D93ED /* ContentView.swift */,
@@ -341,7 +344,8 @@
 				8F7DB4B5234F5A3B005D93ED /* SceneDelegate.swift in Sources */,
 				8FCEBAC12350AA6A00A726E7 /* KeViewModel.swift in Sources */,
 				8FCEBABE2350AA6200A726E7 /* EcmViewModel.swift in Sources */,
-				8F3F379C235D398500E0B2DA /* NumberTextField.swift in Sources */,
+				8F3F379C235D398500E0B2DA /* BindableNumberTextField.swift in Sources */,
+				8FC01FFA2361D145005D1AE5 /* HostingController.swift in Sources */,
 				8F7DB4B7234F5A3B005D93ED /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

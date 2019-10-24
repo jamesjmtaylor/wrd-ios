@@ -18,23 +18,23 @@ struct KeView: View {
                 Image("ke")
                 VStack(alignment: .leading) {
                     Text("Weapon AP")
-                    NumberTextField(numberValue: $vm.ap, placeholderText: "Weapon AP")
+                    BindableNumberTextField(numberValue: $vm.ap, placeholderText: "Weapon AP")
                     Divider()
                 }.padding(.leading)
 
                 VStack(alignment: .leading){
                     Text("Target Armor")
-                    NumberTextField(numberValue: $vm.targetArmor, placeholderText: "Target Armor")
+                    BindableNumberTextField(numberValue: $vm.targetArmor, placeholderText: "Target Armor")
                     Divider()
                 }.padding(.leading)
                 VStack(alignment: .leading) {
                     Text("Weapon Max Range")
-                    NumberTextField(numberValue: $vm.weaponRange, placeholderText: "Weapon Max Range")
+                    BindableNumberTextField(numberValue: $vm.weaponRange, placeholderText: "Weapon Max Range")
                     Divider()
                 }.padding(.leading)
                 VStack(alignment: .leading){
                     Text("Range to Target")
-                    NumberTextField(numberValue: $vm.targetRange, placeholderText: "Range to Target")
+                    BindableNumberTextField(numberValue: $vm.targetRange, placeholderText: "Range to Target")
                     Divider()
                 }.padding(.leading)
                 Text(vm.damage)
