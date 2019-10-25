@@ -10,7 +10,8 @@ import SwiftUI
 
 struct KeView: View {
     @ObservedObject var vm = KeViewModel()
-    @State var ap : Int?
+    @State var now = Date()
+
     var body: some View {
 
         return HStack(alignment:.top){
@@ -37,11 +38,14 @@ struct KeView: View {
                     BindableNumberTextField(numberValue: $vm.targetRange, placeholderText: "Range to Target")
                     Divider()
                 }.padding(.leading)
-                Text(vm.damage)
+                Text("\(now)")
                     .foregroundColor(Color.white)
                     .padding()
                     .background(Color.blue)
                     .frame(maxHeight: .infinity)
+                    .onReceive(vm.didChange) { _ in //TODO: This properly updates every time the VM changes, need to apply to BindableNumberTextFields.
+                        self.now = Date()
+                }
             }
         
         }

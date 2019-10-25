@@ -18,6 +18,7 @@ class KeViewModel: ObservableObject {
     let didChange = PassthroughSubject<KeViewModel, Never>()
 
     func inputChanged() {
+        didChange.send(self)//TODO: Figure out how to update fields based off of this.
         guard let ap = ap,
             let weaponRange = weaponRange,
             let targetRange = targetRange, let targetArmor = targetArmor else {return}

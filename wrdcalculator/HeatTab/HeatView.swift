@@ -9,8 +9,12 @@
 import SwiftUI
 
 struct HeatView: View {
+    @State var test = "Test"
     var body: some View {
+        VStack {
         Text("Heat View")
+        TextField("Test", text: $test) //TODO: Use this exampe for KeView
+        }
     }
 }
 
