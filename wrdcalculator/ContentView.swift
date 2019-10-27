@@ -19,8 +19,6 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-
-
             Text("Damage Calculator")
                 .font(.largeTitle)
                 .fontWeight(.heavy)
