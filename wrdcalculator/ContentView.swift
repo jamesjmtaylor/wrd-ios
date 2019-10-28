@@ -38,7 +38,15 @@ struct ContentView: View {
                 HeatView().tabItem {
                     Text("HEAT")
                     Image("second")
-                }.tag(0)
+                }.tag(1)
+                EcmView().tabItem {
+                    Text("ECM")
+                    Image("second")
+                }.tag(2)
+                ContactView().tabItem {
+                    Text("Contact")
+                    Image("second")
+                }.tag(3)
             }//.accentColor(Color.red)//(Color.red)
 
             }

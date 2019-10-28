@@ -7,57 +7,65 @@
 //
 
 import SwiftUI
+import Rswift
 
 struct KeView: View {
 //    @ObservedObject var vm = KeViewModel()
     @State var ap = ""
     @State var targetArmor = ""
+    @State var targetRange = ""
+    @State var weaponRange = ""
+
+    let outOfRange = "Out of Range"
+    let inefficient = "Inefficient"
+    let damage = "Damage: "
+    var damageColor: Color {
+        if damageString.contains(outOfRange) { return Color.red }
+        if damageString.contains(inefficient) { return Color.black }
+        let d = String(damageString[damage.endIndex ..< damageString.endIndex])
+        if (Int(d) ?? 0) < 10 { return Color.blue }
+        return Color.red
+    }
 
 
     @State var totalAmount = ""
-    let addAmount = 10.0 // or whatever
-    var calc : Double { (Double(ap) ?? 0.0) + (Double(targetArmor) ?? 0.0)  } // or whatever
+    var damageString : String {
+            guard let ap = Double(ap),
+                let weaponRange = Double(weaponRange),
+                let targetRange = Double(targetRange),
+                let targetArmor = Double(targetArmor) else {return damage + " 0"}
+            if (weaponRange < targetRange){
+                return outOfRange;
+            } else {
+                let difference = (weaponRange - targetRange) / 175
+                //print("Difference is equal to",difference)
+                let actualAp = ap + difference
+                //print("actual AP is equal to",actualAp)
+                if (actualAp < targetArmor){
+                    return inefficient
+                } else if (targetArmor == 0){
+                    return damage + "\(round(actualAp * 2))"
+                } else {
+                    return damage + " \(round((actualAp - Double(targetArmor)) / 2 + 1.0))"
+                }
+            }
+    }
 
 ////    @State var weaponRange : Int? = nil
 //    @State var targetRange : Int? = nil
 
     var body: some View {
         return VStack {
-                Image("ke")
-                VStack(alignment: .leading) {
-                    Text("Weapon AP")
-                    TextField("Weapon AP", text: $ap)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .frame(width:150)
-
-
-                    Divider()
-                }.padding(.leading)
-
-                VStack(alignment: .leading){
-                    Text("Target Armor")
-                    TextField("Target Armor", text: $targetArmor)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .frame(width:150)
-                    Divider()
-                }.padding(.leading)
-//                VStack(alignment: .leading) {
-//                    Text("Weapon Max Range")
-//                    BindableNumberTextField(numberValue: $weaponRange, placeholderText: "Weapon Max Range")
-//                    Divider()
-//                }.padding(.leading)
-//                VStack(alignment: .leading){
-//                    Text("Range to Target")
-//                    BindableNumberTextField(numberValue: $targetRange, placeholderText: "Range to Target")
-//                    Divider()
-//                }.padding(.leading)
-            Text(String(self.calc))
-//            Text(vm.damage)
-//                    .foregroundColor(Color.white)
-//                    .padding()
-//                    .background(Color.blue)
-//                    .frame(maxHeight: .infinity)
-//            }
+            Image("ke")
+            InputFieldView(category: Localizable.weaponAp(), input: $ap)
+                InputFieldView(category: "Target Armor", input: $targetArmor)
+                InputFieldView(category: "Weapon Range", input: $weaponRange)
+                InputFieldView(category: "Target Range", input: $targetRange)
+            Text(String(self.damageString))
+                .foregroundColor(Color.white)
+                .padding()
+                .background(damageColor)
+                .frame(maxHeight: .infinity)
         }
     }
 }

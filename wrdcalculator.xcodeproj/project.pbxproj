@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01802F5C198A4E626B4D9B28 /* Pods_wrdcalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F640C84DCE94C82DF6B0771F /* Pods_wrdcalculator.framework */; };
 		8F3F379C235D398500E0B2DA /* BindableNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3F379B235D398500E0B2DA /* BindableNumberTextField.swift */; };
 		8F3F37A2235D3BBB00E0B2DA /* HeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF5459B235B65250035BC6C /* HeatView.swift */; };
 		8F7DB4B3234F5A3B005D93ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4B2234F5A3B005D93ED /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 		8F7DB4BF234F5A3B005D93ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F7DB4BD234F5A3B005D93ED /* LaunchScreen.storyboard */; };
 		8F7DB4CA234F5A3C005D93ED /* wrdcalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4C9234F5A3C005D93ED /* wrdcalculatorTests.swift */; };
 		8F7DB4D5234F5A3C005D93ED /* wrdcalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4D4234F5A3C005D93ED /* wrdcalculatorUITests.swift */; };
+		8F94EF2F23665C4E00E0A3C5 /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F94EF2E23665C4E00E0A3C5 /* InputFieldView.swift */; };
 		8FC01FFA2361D145005D1AE5 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC01FF92361D145005D1AE5 /* HostingController.swift */; };
 		8FCEBAB82350AA4C00A726E7 /* HeatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBAB72350AA4C00A726E7 /* HeatViewModel.swift */; };
 		8FCEBAB92350AA4C00A726E7 /* HeatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBAB72350AA4C00A726E7 /* HeatViewModel.swift */; };
@@ -26,6 +28,12 @@
 		8FCEBABF2350AA6200A726E7 /* EcmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBABD2350AA6200A726E7 /* EcmViewModel.swift */; };
 		8FCEBAC12350AA6A00A726E7 /* KeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBAC02350AA6A00A726E7 /* KeViewModel.swift */; };
 		8FCEBAC22350AA6A00A726E7 /* KeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBAC02350AA6A00A726E7 /* KeViewModel.swift */; };
+		8FEF748B236710F500850F6B /* EcmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEF748A236710F500850F6B /* EcmView.swift */; };
+		8FEF748D2367110100850F6B /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEF748C2367110100850F6B /* ContactView.swift */; };
+		8FEF74902367190800850F6B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEF748F2367190800850F6B /* R.generated.swift */; };
+		8FEF749423671B2100850F6B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8FEF749323671B2100850F6B /* Localizable.strings */; };
+		8FEF749723671C4900850F6B /* RExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEF749623671C4900850F6B /* RExtensions.swift */; };
+		8FEF749923671D2000850F6B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8FEF749823671D2000850F6B /* Settings.bundle */; };
 		8FF5459A235B5E200035BC6C /* KeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF54599235B5E200035BC6C /* KeView.swift */; };
 		8FF5459C235B65250035BC6C /* HeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF5459B235B65250035BC6C /* HeatView.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1BC3EC32FC3FAF7D8CA840C2 /* Pods-wrdcalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wrdcalculator.release.xcconfig"; path = "Target Support Files/Pods-wrdcalculator/Pods-wrdcalculator.release.xcconfig"; sourceTree = "<group>"; };
 		8F3F379B235D398500E0B2DA /* BindableNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableNumberTextField.swift; sourceTree = "<group>"; };
 		8F7DB4AF234F5A3B005D93ED /* wrdcalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wrdcalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7DB4B2234F5A3B005D93ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,13 +72,22 @@
 		8F7DB4D0234F5A3C005D93ED /* wrdcalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wrdcalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7DB4D4234F5A3C005D93ED /* wrdcalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wrdcalculatorUITests.swift; sourceTree = "<group>"; };
 		8F7DB4D6234F5A3C005D93ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F94EF2E23665C4E00E0A3C5 /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
 		8FC01FF92361D145005D1AE5 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		8FCEBAB72350AA4C00A726E7 /* HeatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatViewModel.swift; sourceTree = "<group>"; };
 		8FCEBABA2350AA5800A726E7 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		8FCEBABD2350AA6200A726E7 /* EcmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcmViewModel.swift; sourceTree = "<group>"; };
 		8FCEBAC02350AA6A00A726E7 /* KeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeViewModel.swift; sourceTree = "<group>"; };
+		8FEF748A236710F500850F6B /* EcmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcmView.swift; sourceTree = "<group>"; };
+		8FEF748C2367110100850F6B /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		8FEF748F2367190800850F6B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		8FEF749323671B2100850F6B /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		8FEF749623671C4900850F6B /* RExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RExtensions.swift; sourceTree = "<group>"; };
+		8FEF749823671D2000850F6B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		8FF54599235B5E200035BC6C /* KeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeView.swift; sourceTree = "<group>"; };
 		8FF5459B235B65250035BC6C /* HeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatView.swift; sourceTree = "<group>"; };
+		DE23A1FC98322B0592F6BDB2 /* Pods-wrdcalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wrdcalculator.debug.xcconfig"; path = "Target Support Files/Pods-wrdcalculator/Pods-wrdcalculator.debug.xcconfig"; sourceTree = "<group>"; };
+		F640C84DCE94C82DF6B0771F /* Pods_wrdcalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wrdcalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01802F5C198A4E626B4D9B28 /* Pods_wrdcalculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +116,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27D035CDEDB309D42EA31F43 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE23A1FC98322B0592F6BDB2 /* Pods-wrdcalculator.debug.xcconfig */,
+				1BC3EC32FC3FAF7D8CA840C2 /* Pods-wrdcalculator.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7612C1C293B87865CE359712 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F640C84DCE94C82DF6B0771F /* Pods_wrdcalculator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8F3F379D235D3B5A00E0B2DA /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				8FF54599235B5E200035BC6C /* KeView.swift */,
+				8F94EF2E23665C4E00E0A3C5 /* InputFieldView.swift */,
 				8FCEBAC02350AA6A00A726E7 /* KeViewModel.swift */,
 			);
 			path = KeTab;
@@ -128,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				8FCEBABD2350AA6200A726E7 /* EcmViewModel.swift */,
+				8FEF748A236710F500850F6B /* EcmView.swift */,
 			);
 			path = EcmTab;
 			sourceTree = "<group>";
@@ -136,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				8FCEBABA2350AA5800A726E7 /* ContactViewModel.swift */,
+				8FEF748C2367110100850F6B /* ContactView.swift */,
 			);
 			path = ContactTab;
 			sourceTree = "<group>";
@@ -143,10 +182,13 @@
 		8F7DB4A6234F5A3B005D93ED = {
 			isa = PBXGroup;
 			children = (
+				8FEF748F2367190800850F6B /* R.generated.swift */,
 				8F7DB4B1234F5A3B005D93ED /* wrdcalculator */,
 				8F7DB4C8234F5A3C005D93ED /* wrdcalculatorTests */,
 				8F7DB4D3234F5A3C005D93ED /* wrdcalculatorUITests */,
 				8F7DB4B0234F5A3B005D93ED /* Products */,
+				27D035CDEDB309D42EA31F43 /* Pods */,
+				7612C1C293B87865CE359712 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,15 +205,16 @@
 		8F7DB4B1234F5A3B005D93ED /* wrdcalculator */ = {
 			isa = PBXGroup;
 			children = (
+				8FEF749223671AFA00850F6B /* Resources */,
 				8F3F37A1235D3B8E00E0B2DA /* ContactTab */,
 				8F3F37A0235D3B8600E0B2DA /* EcmTab */,
 				8F3F379F235D3B7E00E0B2DA /* HeatTab */,
 				8F3F379E235D3B7800E0B2DA /* KeTab */,
+				8FEF749523671C1700850F6B /* Extensions */,
 				8F3F379D235D3B5A00E0B2DA /* Util */,
 				8F7DB4B2234F5A3B005D93ED /* AppDelegate.swift */,
 				8F7DB4B4234F5A3B005D93ED /* SceneDelegate.swift */,
 				8F7DB4B6234F5A3B005D93ED /* ContentView.swift */,
-				8F7DB4B8234F5A3B005D93ED /* Assets.xcassets */,
 				8F7DB4BD234F5A3B005D93ED /* LaunchScreen.storyboard */,
 				8F7DB4C0234F5A3B005D93ED /* Info.plist */,
 				8F7DB4BA234F5A3B005D93ED /* Preview Content */,
@@ -205,6 +248,24 @@
 			path = wrdcalculatorUITests;
 			sourceTree = "<group>";
 		};
+		8FEF749223671AFA00850F6B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8F7DB4B8234F5A3B005D93ED /* Assets.xcassets */,
+				8FEF749323671B2100850F6B /* Localizable.strings */,
+				8FEF749823671D2000850F6B /* Settings.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8FEF749523671C1700850F6B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8FEF749623671C4900850F6B /* RExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -212,9 +273,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8F7DB4D9234F5A3C005D93ED /* Build configuration list for PBXNativeTarget "wrdcalculator" */;
 			buildPhases = (
+				8722F25E96FB1CDF50495D36 /* [CP] Check Pods Manifest.lock */,
+				8FEF748E2367178200850F6B /* ShellScript */,
 				8F7DB4AB234F5A3B005D93ED /* Sources */,
 				8F7DB4AC234F5A3B005D93ED /* Frameworks */,
 				8F7DB4AD234F5A3B005D93ED /* Resources */,
+				6640281130E03D96A7F1CA97 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -310,6 +374,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F7DB4BF234F5A3B005D93ED /* LaunchScreen.storyboard in Resources */,
+				8FEF749423671B2100850F6B /* Localizable.strings in Resources */,
+				8FEF749923671D2000850F6B /* Settings.bundle in Resources */,
 				8F7DB4BC234F5A3B005D93ED /* Preview Assets.xcassets in Resources */,
 				8F7DB4B9234F5A3B005D93ED /* Assets.xcassets in Resources */,
 			);
@@ -331,6 +397,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6640281130E03D96A7F1CA97 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-wrdcalculator/Pods-wrdcalculator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-wrdcalculator/Pods-wrdcalculator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-wrdcalculator/Pods-wrdcalculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8722F25E96FB1CDF50495D36 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-wrdcalculator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FEF748E2367178200850F6B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8F7DB4AB234F5A3B005D93ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -338,6 +465,8 @@
 			files = (
 				8FF5459C235B65250035BC6C /* HeatView.swift in Sources */,
 				8FCEBAB82350AA4C00A726E7 /* HeatViewModel.swift in Sources */,
+				8FEF74902367190800850F6B /* R.generated.swift in Sources */,
+				8F94EF2F23665C4E00E0A3C5 /* InputFieldView.swift in Sources */,
 				8F7DB4B3234F5A3B005D93ED /* AppDelegate.swift in Sources */,
 				8FF5459A235B5E200035BC6C /* KeView.swift in Sources */,
 				8FCEBABB2350AA5800A726E7 /* ContactViewModel.swift in Sources */,
@@ -346,7 +475,10 @@
 				8FCEBABE2350AA6200A726E7 /* EcmViewModel.swift in Sources */,
 				8F3F379C235D398500E0B2DA /* BindableNumberTextField.swift in Sources */,
 				8FC01FFA2361D145005D1AE5 /* HostingController.swift in Sources */,
+				8FEF748D2367110100850F6B /* ContactView.swift in Sources */,
 				8F7DB4B7234F5A3B005D93ED /* ContentView.swift in Sources */,
+				8FEF749723671C4900850F6B /* RExtensions.swift in Sources */,
+				8FEF748B236710F500850F6B /* EcmView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +646,7 @@
 		};
 		8F7DB4DA234F5A3C005D93ED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE23A1FC98322B0592F6BDB2 /* Pods-wrdcalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -534,6 +667,7 @@
 		};
 		8F7DB4DB234F5A3C005D93ED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BC3EC32FC3FAF7D8CA840C2 /* Pods-wrdcalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

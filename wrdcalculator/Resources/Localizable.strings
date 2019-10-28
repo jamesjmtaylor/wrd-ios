@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  wrdcalculator
+
+  Created by James Taylor on 10/28/19.
+  Copyright © 2019 James Taylor. All rights reserved.
+*/
+"next" = "Next";
+"done" = "Done";
+
+"weaponAp" = "Weapon AP";
+"back" = "Back";
+"skip" = "Skip";
+"back" = "Back";
