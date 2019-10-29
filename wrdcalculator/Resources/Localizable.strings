@@ -9,6 +9,9 @@
 "done" = "Done";
 
 "weaponAp" = "Weapon AP";
-"back" = "Back";
-"skip" = "Skip";
-"back" = "Back";
+"weaponRange" = "Weapon Range";
+"targetArmor" = "Target Armor";
+"targetRange" = "Target Range";
+"outOfRange" = "Out of Range";
+"inefficient" = "Inefficient";
+"damagePrefix" = "Damage: ";
