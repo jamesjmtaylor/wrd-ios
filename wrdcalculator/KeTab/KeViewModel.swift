@@ -10,18 +10,21 @@ import SwiftUI
 import Combine
 import Rswift
 
-struct KeViewModel {
-    @State var ap = ""
-    @State var targetArmor = ""
-    @State var targetRange = ""
-    @State var weaponRange = ""
+class KeViewModel : ObservableObject {
+    @Published var ap = ""
+    @Published var targetArmor = ""
+    @Published var targetRange = ""
+    @Published var weaponRange = ""
 
     var damageColor: Color {
-        if damageString.contains(Localizable.outOfRange()) { return Color.red }
-        if damageString.contains(Localizable.inefficient()) { return Color.black }
-        let d = damageString.split(separator: " ").last ?? ""
-        if (Double(d) ?? 0) < 10 { return Color.blue }
-        return Color.red
+        var color : UIColor? // default to white
+        if damageString.contains(Localizable.outOfRange())
+        || damageString.contains(Localizable.inefficient()){ color =  R.color.dark() }
+        if let d = Double(damageString.split(separator: " ").last ?? "") {
+            if d < 10 { color = R.color.primary() }
+            else { color = R.color.danger() }
+        }
+        return Color(color ?? UIColor.white)
     }
 
     var damageString : String {

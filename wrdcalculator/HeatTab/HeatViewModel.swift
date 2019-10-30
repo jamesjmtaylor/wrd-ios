@@ -8,33 +8,43 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class HeatViewModel: ObservableObject  {
-    var ap : Int? { didSet {inputChanged()}}
-    var targetArmor : Int? { didSet {inputChanged()}}
-    var weaponRange : Int? { didSet {inputChanged()}}
-    var targetRange : Int? { didSet {inputChanged()}}
-    var damage = ""
-    let didChange = PassthroughSubject<HeatViewModel, Never>()
+    @Published var ap = ""
+    @Published var targetArmor = ""
 
-    func inputChanged() {
-        didChange.send(self)//TODO: Figure out how to update fields based off of this.
-        guard let ap = ap,
-        let weaponRange = weaponRange,
-        let targetRange = targetRange,
-        let targetArmor = targetArmor else {return}
-        if (weaponRange < targetRange){
+    var damageString : String {
+            guard let ap = Double(ap),
+                let targetArmor = Double(targetArmor) else {
+                    return Localizable.damagePrefix() + " 0"
+        }
         if targetArmor==1 {
-            damage = ap.description
+            return Localizable.damagePrefix()
+            +  ap.description
         } else if targetArmor==0 {
-            damage = (ap * 2).description
+            return Localizable.damagePrefix()
+            + (ap * 2).description
         } else if (ap-targetArmor)>=10{
-            damage = (6 + ap - 10 - targetArmor).description
+            return Localizable.damagePrefix()
+            + (6 + ap - 10 - targetArmor).description
         } else if ap-targetArmor < 10 && ap - targetArmor >= 1 {
-            damage = round(Double(ap - targetArmor)/2 + 1).description
+            return Localizable.damagePrefix()
+            +  round(Double(ap - targetArmor)/2 + 1).description
         } else {
-            damage = 0.description;
+            return Localizable.damagePrefix()
+            +  0.description;
         }
     }
+
+    var damageColor: Color {
+        var color : UIColor? // default to white
+        if damageString.contains(Localizable.outOfRange())
+        || damageString.contains(Localizable.inefficient()){ color =  R.color.dark() }
+        if let d = Double(damageString.split(separator: " ").last ?? "") {
+            if d < 10 { color = R.color.primary() }
+            else { color = R.color.danger() }
+        }
+        return Color(color ?? UIColor.white)
     }
 }

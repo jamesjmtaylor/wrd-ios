@@ -31,11 +31,11 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.top)
 
             TabView {
-                KeView().tabItem {
+                KeView().environmentObject(KeViewModel()).tabItem {
                     Text("KE")
                     Image("first")
                 }.tag(0)
-                HeatView().tabItem {
+                HeatView().environmentObject(HeatViewModel()).tabItem {
                     Text("HEAT")
                     Image("second")
                 }.tag(1)
