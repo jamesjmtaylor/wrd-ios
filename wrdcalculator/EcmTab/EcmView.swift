@@ -9,8 +9,17 @@
 import SwiftUI
 
 struct EcmView: View {
+    @EnvironmentObject var vm: EcmViewModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        return VStack {
+            Image("Ecm")
+            Divider()
+
+            //InputFieldView(category: Localizable.accOfAA()(), input: $vm.targetArmor)
+            //InputFieldView(category: Localizable.missilesFired(), input: $vm.targetArmor)
+            //InputFieldView(category: Localizable.desiredHits(), input: $vm.targetArmor)
+        }
+
     }
 }
 

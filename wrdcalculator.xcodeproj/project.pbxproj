@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		01802F5C198A4E626B4D9B28 /* Pods_wrdcalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F640C84DCE94C82DF6B0771F /* Pods_wrdcalculator.framework */; };
-		8F3F379C235D398500E0B2DA /* BindableNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3F379B235D398500E0B2DA /* BindableNumberTextField.swift */; };
 		8F3F37A2235D3BBB00E0B2DA /* HeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF5459B235B65250035BC6C /* HeatView.swift */; };
 		8F7DB4B3234F5A3B005D93ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4B2234F5A3B005D93ED /* AppDelegate.swift */; };
 		8F7DB4B5234F5A3B005D93ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4B4234F5A3B005D93ED /* SceneDelegate.swift */; };
@@ -57,7 +56,6 @@
 
 /* Begin PBXFileReference section */
 		1BC3EC32FC3FAF7D8CA840C2 /* Pods-wrdcalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wrdcalculator.release.xcconfig"; path = "Target Support Files/Pods-wrdcalculator/Pods-wrdcalculator.release.xcconfig"; sourceTree = "<group>"; };
-		8F3F379B235D398500E0B2DA /* BindableNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableNumberTextField.swift; sourceTree = "<group>"; };
 		8F7DB4AF234F5A3B005D93ED /* wrdcalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wrdcalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7DB4B2234F5A3B005D93ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F7DB4B4234F5A3B005D93ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,7 +134,7 @@
 		8F3F379D235D3B5A00E0B2DA /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				8F3F379B235D398500E0B2DA /* BindableNumberTextField.swift */,
+				8F94EF2E23665C4E00E0A3C5 /* InputFieldView.swift */,
 				8FC01FF92361D145005D1AE5 /* HostingController.swift */,
 			);
 			path = Util;
@@ -146,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				8FF54599235B5E200035BC6C /* KeView.swift */,
-				8F94EF2E23665C4E00E0A3C5 /* InputFieldView.swift */,
 				8FCEBAC02350AA6A00A726E7 /* KeViewModel.swift */,
 			);
 			path = KeTab;
@@ -473,7 +470,6 @@
 				8F7DB4B5234F5A3B005D93ED /* SceneDelegate.swift in Sources */,
 				8FCEBAC12350AA6A00A726E7 /* KeViewModel.swift in Sources */,
 				8FCEBABE2350AA6200A726E7 /* EcmViewModel.swift in Sources */,
-				8F3F379C235D398500E0B2DA /* BindableNumberTextField.swift in Sources */,
 				8FC01FFA2361D145005D1AE5 /* HostingController.swift in Sources */,
 				8FEF748D2367110100850F6B /* ContactView.swift in Sources */,
 				8F7DB4B7234F5A3B005D93ED /* ContentView.swift in Sources */,

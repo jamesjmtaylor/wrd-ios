@@ -39,7 +39,7 @@ struct ContentView: View {
                     Text("HEAT")
                     Image("second")
                 }.tag(1)
-                EcmView().tabItem {
+                EcmView().environmentObject(EcmViewModel()).tabItem {
                     Text("ECM")
                     Image("second")
                 }.tag(2)

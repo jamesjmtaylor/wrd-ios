@@ -15,3 +15,17 @@
 "outOfRange" = "Out of Range";
 "inefficient" = "Inefficient";
 "damagePrefix" = "Damage: ";
+
+"vetOfAA" = "Veterancy of AA";
+"rookie" = "Rookie";
+"trained" = "Trained";
+"hardened" = "Hardened";
+"veteran" = "Veteran";
+"elite" = "Elite";
+
+"ecmAttackedAircraft" = "ECM of Attacked Aircraft";
+"accOfAA" = "Accuracy of AA";
+"missilesFired" = "Missiles Fired";
+"desiredHits" = "Desired Hits";
+"chancesPrefix" = "Chances of Happening: ";
+

@@ -8,13 +8,13 @@
 
 import Foundation
 
-class EcmViewModel {
-    var vet = 0.0
-    var ecm = 100.0
-    var acc = 0.0
-    var missiles = 0.0
-    var hits = 0.0
-    var chances = 0.0
+class EcmViewModel: ObservableObject  {
+    @Published var vet = 0.0
+    @Published var ecm = 100.0
+    @Published var acc = 0.0
+    @Published var missiles = 0.0
+    @Published var hits = 0.0
+    @Published var chances = 0.0
 
     func productRange(a: Double, b: Double) -> Double {
         var product = a, i = a;
