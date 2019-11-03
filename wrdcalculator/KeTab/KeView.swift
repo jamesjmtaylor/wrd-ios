@@ -10,7 +10,7 @@ import SwiftUI
 import Rswift
 
 struct KeView: View {
-    @EnvironmentObject var vm: KeViewModel
+    @ObservedObject var vm: KeViewModel
     var body: some View {
         return VStack {
             Image("ke")
@@ -30,6 +30,6 @@ struct KeView: View {
 
 struct KeView_Previews: PreviewProvider {
     static var previews: some View {
-        KeView()
+        KeView(vm: KeViewModel())
     }
 }

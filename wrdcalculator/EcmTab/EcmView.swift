@@ -7,17 +7,18 @@
 //
 
 import SwiftUI
+import Rswift
 
 struct EcmView: View {
-    @EnvironmentObject var vm: EcmViewModel
+    @ObservedObject var vm: EcmViewModel
     var body: some View {
         return VStack {
-            Image("Ecm")
+            Image("sam").scaledToFit()
             Divider()
 
-            //InputFieldView(category: Localizable.accOfAA()(), input: $vm.targetArmor)
-            //InputFieldView(category: Localizable.missilesFired(), input: $vm.targetArmor)
-            //InputFieldView(category: Localizable.desiredHits(), input: $vm.targetArmor)
+            InputFieldView(category: Localizable.accOfAA(), input: $vm.accuracy)
+            InputFieldView(category: Localizable.missilesFired(), input: $vm.missiles)
+            InputFieldView(category: Localizable.desiredHits(), input: $vm.hits)
         }
 
     }
@@ -25,6 +26,6 @@ struct EcmView: View {
 
 struct EcmView_Previews: PreviewProvider {
     static var previews: some View {
-        EcmView()
+        EcmView(vm: EcmViewModel())
     }
 }

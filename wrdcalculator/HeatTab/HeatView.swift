@@ -7,9 +7,10 @@
 //
 
 import SwiftUI
+import Rswift
 
 struct HeatView: View {
-    @EnvironmentObject var vm: HeatViewModel
+    @ObservedObject var vm: HeatViewModel
     var body: some View {
         return VStack {
             Image("heat")
@@ -27,7 +28,7 @@ struct HeatView: View {
 
 struct HeatView_Previews: PreviewProvider {
     static var previews: some View {
-        HeatView()
+        HeatView(vm: HeatViewModel())
     }
 }
 

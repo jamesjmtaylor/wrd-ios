@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		01802F5C198A4E626B4D9B28 /* Pods_wrdcalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F640C84DCE94C82DF6B0771F /* Pods_wrdcalculator.framework */; };
-		8F3F37A2235D3BBB00E0B2DA /* HeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF5459B235B65250035BC6C /* HeatView.swift */; };
 		8F7DB4B3234F5A3B005D93ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4B2234F5A3B005D93ED /* AppDelegate.swift */; };
 		8F7DB4B5234F5A3B005D93ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4B4234F5A3B005D93ED /* SceneDelegate.swift */; };
 		8F7DB4B7234F5A3B005D93ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4B6234F5A3B005D93ED /* ContentView.swift */; };
@@ -20,13 +19,10 @@
 		8F94EF2F23665C4E00E0A3C5 /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F94EF2E23665C4E00E0A3C5 /* InputFieldView.swift */; };
 		8FC01FFA2361D145005D1AE5 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC01FF92361D145005D1AE5 /* HostingController.swift */; };
 		8FCEBAB82350AA4C00A726E7 /* HeatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBAB72350AA4C00A726E7 /* HeatViewModel.swift */; };
-		8FCEBAB92350AA4C00A726E7 /* HeatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBAB72350AA4C00A726E7 /* HeatViewModel.swift */; };
 		8FCEBABB2350AA5800A726E7 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBABA2350AA5800A726E7 /* ContactViewModel.swift */; };
 		8FCEBABC2350AA5800A726E7 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBABA2350AA5800A726E7 /* ContactViewModel.swift */; };
 		8FCEBABE2350AA6200A726E7 /* EcmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBABD2350AA6200A726E7 /* EcmViewModel.swift */; };
-		8FCEBABF2350AA6200A726E7 /* EcmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBABD2350AA6200A726E7 /* EcmViewModel.swift */; };
 		8FCEBAC12350AA6A00A726E7 /* KeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBAC02350AA6A00A726E7 /* KeViewModel.swift */; };
-		8FCEBAC22350AA6A00A726E7 /* KeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBAC02350AA6A00A726E7 /* KeViewModel.swift */; };
 		8FEF748B236710F500850F6B /* EcmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEF748A236710F500850F6B /* EcmView.swift */; };
 		8FEF748D2367110100850F6B /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEF748C2367110100850F6B /* ContactView.swift */; };
 		8FEF74902367190800850F6B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEF748F2367190800850F6B /* R.generated.swift */; };
@@ -482,11 +478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F3F37A2235D3BBB00E0B2DA /* HeatView.swift in Sources */,
-				8FCEBAB92350AA4C00A726E7 /* HeatViewModel.swift in Sources */,
-				8FCEBAC22350AA6A00A726E7 /* KeViewModel.swift in Sources */,
 				8FCEBABC2350AA5800A726E7 /* ContactViewModel.swift in Sources */,
-				8FCEBABF2350AA6200A726E7 /* EcmViewModel.swift in Sources */,
 				8F7DB4CA234F5A3C005D93ED /* wrdcalculatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
