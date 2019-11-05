@@ -14,14 +14,28 @@ struct KeView: View {
     var body: some View {
         return VStack {
             Image("ke")
-            InputFieldView(category: Localizable.weaponAp(), input: $vm.ap)
-            InputFieldView(category: Localizable.targetArmor(), input: $vm.targetArmor)
-            InputFieldView(category: Localizable.weaponRange(), input: $vm.weaponRange)
-            InputFieldView(category: Localizable.targetRange(), input: $vm.targetRange)
+//            InputFieldView(category: Localizable.weaponAp(), input: $vm.ap)
+//            InputFieldView(category: Localizable.targetArmor(), input: $vm.targetArmor)
+//            InputFieldView(category: Localizable.weaponRange(), input: $vm.weaponRange)
+//            InputFieldView(category: Localizable.targetRange(), input: $vm.targetRange)
+            //TODO:
+            //1. Jam TextFieldView into InputFieldView
+            //2. Get vertical size to wrap content (looks like it is 'maxHeight: .infinity' right now
+            //3. Convert to number keyboard
+            //4. Get 'NEXT' & 'DONE' to show up on keyboard
+            TextFieldView(text: $vm.ap, onDismissKeyboard: nil)
+            TextFieldView(text: $vm.targetArmor, onDismissKeyboard: nil)
+            TextFieldView(text: $vm.targetArmor, onDismissKeyboard: nil)
+            TextFieldView(text: $vm.targetArmor, onDismissKeyboard: nil)
+            TextFieldView(text: $vm.targetArmor, onDismissKeyboard: nil)
+            TextFieldView(text: $vm.targetArmor, onDismissKeyboard: nil)
+            TextFieldView(text: $vm.targetArmor, onDismissKeyboard: nil)
+            TextFieldView(text: $vm.targetArmor, onDismissKeyboard: nil)
+
             Text(String(vm.damageString))
             .foregroundColor(Color.white)
             .padding()
-                .background(vm.damageColor)
+            .background(vm.damageColor)
             .frame(maxHeight: .infinity)
         }
     }
