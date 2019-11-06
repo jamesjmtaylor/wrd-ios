@@ -12,6 +12,7 @@
 		8F08A9EC2371ABA200161BDF /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08A9EB2371ABA200161BDF /* TextFieldView.swift */; };
 		8F08A9EE2371AD6800161BDF /* TextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F08A9ED2371AD6800161BDF /* TextField.xib */; };
 		8F08A9F02371AE8300161BDF /* UIView+LoadNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08A9EF2371AE8300161BDF /* UIView+LoadNib.swift */; };
+		8F5DA3C823730359002B9F45 /* KeyboardHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5DA3C723730359002B9F45 /* KeyboardHost.swift */; };
 		8F7DB4B3234F5A3B005D93ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4B2234F5A3B005D93ED /* AppDelegate.swift */; };
 		8F7DB4B5234F5A3B005D93ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4B4234F5A3B005D93ED /* SceneDelegate.swift */; };
 		8F7DB4B7234F5A3B005D93ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4B6234F5A3B005D93ED /* ContentView.swift */; };
@@ -61,6 +62,7 @@
 		8F08A9EB2371ABA200161BDF /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		8F08A9ED2371AD6800161BDF /* TextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextField.xib; sourceTree = "<group>"; };
 		8F08A9EF2371AE8300161BDF /* UIView+LoadNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LoadNib.swift"; sourceTree = "<group>"; };
+		8F5DA3C723730359002B9F45 /* KeyboardHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHost.swift; sourceTree = "<group>"; };
 		8F7DB4AF234F5A3B005D93ED /* wrdcalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wrdcalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7DB4B2234F5A3B005D93ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F7DB4B4234F5A3B005D93ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				8F08A9E92371AA7100161BDF /* TextFieldViewController.swift */,
 				8F08A9EB2371ABA200161BDF /* TextFieldView.swift */,
 				8F08A9ED2371AD6800161BDF /* TextField.xib */,
+				8F5DA3C723730359002B9F45 /* KeyboardHost.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				8FCEBAB82350AA4C00A726E7 /* HeatViewModel.swift in Sources */,
 				8FEF74902367190800850F6B /* R.generated.swift in Sources */,
 				8FC879BA236F60AB00268C02 /* InputButtonRow.swift in Sources */,
+				8F5DA3C823730359002B9F45 /* KeyboardHost.swift in Sources */,
 				8F94EF2F23665C4E00E0A3C5 /* InputFieldView.swift in Sources */,
 				8F7DB4B3234F5A3B005D93ED /* AppDelegate.swift in Sources */,
 				8FF5459A235B5E200035BC6C /* KeView.swift in Sources */,

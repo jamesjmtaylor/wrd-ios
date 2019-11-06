@@ -12,7 +12,7 @@ import Rswift
 struct KeView: View {
     @ObservedObject var vm: KeViewModel
     var body: some View {
-        return VStack {
+        return KeyboardHost {
             Image("ke")
 //            InputFieldView(category: Localizable.weaponAp(), input: $vm.ap)
 //            InputFieldView(category: Localizable.targetArmor(), input: $vm.targetArmor)
@@ -27,10 +27,7 @@ struct KeView: View {
             TextFieldView(text: $vm.targetArmor, onDismissKeyboard: nil)
             TextFieldView(text: $vm.targetArmor, onDismissKeyboard: nil)
             TextFieldView(text: $vm.targetArmor, onDismissKeyboard: nil)
-            TextFieldView(text: $vm.targetArmor, onDismissKeyboard: nil)
-            TextFieldView(text: $vm.targetArmor, onDismissKeyboard: nil)
-            TextFieldView(text: $vm.targetArmor, onDismissKeyboard: nil)
-            TextFieldView(text: $vm.targetArmor, onDismissKeyboard: nil)
+
 
             Text(String(vm.damageString))
             .foregroundColor(Color.white)
