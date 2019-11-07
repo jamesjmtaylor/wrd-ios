@@ -11,9 +11,9 @@ import SwiftUI
 struct ContentView: View {
     @State private var selection = 0
     init(){
-        UITabBar.appearance().backgroundColor = UIColor.red
-        UITabBar.appearance().barTintColor = UIColor.red
-        UITabBar.appearance().tintColor = UIColor.red
+        UITabBar.appearance().backgroundColor = R.color.danger() ?? .red
+        UITabBar.appearance().barTintColor = R.color.danger() ?? .red
+        UITabBar.appearance().tintColor = R.color.danger() ?? .red
         UITabBar.appearance().unselectedItemTintColor = UIColor.white
     }
 
@@ -33,21 +33,21 @@ struct ContentView: View {
             TabView {
                 KeView(vm: KeViewModel()).tabItem {
                     Text("KE")
-                    Image("first")
+                    Image("ke_tab")
                 }.tag(0)
                 HeatView(vm: HeatViewModel()).tabItem {
                     Text("HEAT")
-                    Image("second")
+                    Image("heat_tab")
                 }.tag(1)
                 EcmView(vm: EcmViewModel()).tabItem {
                     Text("ECM")
-                    Image("second")
+                    Image("ecm_tab")
                 }.tag(2)
                 ContactView().tabItem {
                     Text("Contact")
-                    Image("second")
+                    Image("contact_tab")
                 }.tag(3)
-            }//.accentColor(Color.red)//(Color.red)
+            }.accentColor(R.color.)//(Color.red)
 
             }
         }
