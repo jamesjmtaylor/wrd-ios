@@ -9,12 +9,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selection = 0
+//    @State private var selection = 0
     init(){
-        UITabBar.appearance().backgroundColor = R.color.danger() ?? .red
-        UITabBar.appearance().barTintColor = R.color.danger() ?? .red
-        UITabBar.appearance().tintColor = R.color.danger() ?? .red
-        UITabBar.appearance().unselectedItemTintColor = UIColor.white
+//        UITabBar.appearance().backgroundColor =  .red
+        UITabBar.appearance().barTintColor = R.color.toolbarBackground() ?? .red
+//        UITabBar.appearance().tintColor = .red
+        UITabBar.appearance().unselectedItemTintColor = R.color.toolbarInactive() ??  UIColor.white
+
     }
 
     var body: some View {
@@ -27,31 +28,30 @@ struct ContentView: View {
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.center)
                 .foregroundColor(Color.white)
-                .background(Color.red)
+                .background(Color(R.color.danger() ?? .red))
                 .edgesIgnoringSafeArea(.top)
 
             TabView {
                 KeView(vm: KeViewModel()).tabItem {
                     Text("KE")
-                    Image("ke_tab")
+                    Image(systemName: "bolt.fill")
                 }.tag(0)
                 HeatView(vm: HeatViewModel()).tabItem {
                     Text("HEAT")
-                    Image("heat_tab")
+                    Image(systemName: "flame.fill")
                 }.tag(1)
                 EcmView(vm: EcmViewModel()).tabItem {
                     Text("ECM")
-                    Image("ecm_tab")
+                    Image(systemName: "airplane")
                 }.tag(2)
                 ContactView().tabItem {
                     Text("Contact")
-                    Image("contact_tab")
+                    Image(systemName: "person.crop.circle")
                 }.tag(3)
-            }.accentColor(R.color.)//(Color.red)
-
-            }
+            }.accentColor(Color(R.color.toolbarActive() ?? .yellow))
         }
     }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
