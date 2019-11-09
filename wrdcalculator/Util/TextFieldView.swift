@@ -20,13 +20,12 @@ struct TextFieldView: View {
         TextFieldRepresentable(
             text: self.text
             , dismissKeyboardCallback: self.onDismissKeyboard
-        )
+        ).frame(height: 32, alignment: .leading)
     }
 }
 
 // The UIViewControllerRepresentable, feeding and controlling the UIViewController
-struct TextFieldRepresentable
-    : UIViewControllerRepresentable {
+struct TextFieldRepresentable: UIViewControllerRepresentable {
 
     // the callback
     let dismissKeyboardCallback: (() -> Void)?
@@ -34,25 +33,14 @@ struct TextFieldRepresentable
     // created in the previous file/gist
     let viewController: TextFieldViewController
 
-    init (
-        text: Binding<String>
-        , dismissKeyboardCallback: (() -> Void)?) {
-
+    init (text: Binding<String>, dismissKeyboardCallback: (() -> Void)?) {
         self.dismissKeyboardCallback = dismissKeyboardCallback
-        self.viewController = TextFieldViewController(
-            text: text
-            , onDismiss: dismissKeyboardCallback
-        )
+        self.viewController = TextFieldViewController(text: text, onDismiss: dismissKeyboardCallback)
     }
 
-    // UIViewControllerRepresentable
     func makeUIViewController(context: Context) -> UIViewController {
-
         return viewController
     }
 
-    // UIViewControllerRepresentable
-    func updateUIViewController(_ viewController: UIViewController, context: Context) {
-    }
-
+    func updateUIViewController(_ viewController: UIViewController, context: Context) {}
 }

@@ -18,9 +18,7 @@ struct InputFieldView: View {
     var body: some View {
         return VStack(alignment: .leading) {
             Text(category)
-            TextField(category, text: input)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .keyboardType(.numberPad)
+            TextFieldView(text: input, onDismissKeyboard: nil)
                 .padding(.trailing)
             Divider()
         }.padding(.leading)

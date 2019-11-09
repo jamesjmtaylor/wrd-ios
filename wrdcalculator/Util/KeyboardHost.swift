@@ -37,10 +37,13 @@ struct KeyboardHost<Content: View>: View {
 
     var body: some View {
         VStack {
-            view.padding(.bottom, keyboardHeight)
-                .animation(.default) }
-                .onReceive(showPublisher.merge(with: hidePublisher)) {
-                    (height) in self.keyboardHeight = height
+            view
+            Rectangle()
+                .frame(height: keyboardHeight)
+                .animation(.default)
+                .foregroundColor(.clear)
+        }.onReceive(showPublisher.merge(with: hidePublisher)) { (height) in
+            self.keyboardHeight = height
         }
     }
 }

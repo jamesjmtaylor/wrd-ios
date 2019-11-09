@@ -13,10 +13,7 @@ class TextFieldViewController: UIViewController {
     let text: Binding<String>?
     let onDismiss: (() -> Void)?
 
-    init (
-
-        text: Binding<String>, onDismiss: (() -> Void)?) {
-
+    init (text: Binding<String>, onDismiss: (() -> Void)?) {
         self.text = text
         self.onDismiss = onDismiss
 // NOTE: For the xib connection to work you must create the xib & set it's owner to this file
@@ -26,7 +23,6 @@ class TextFieldViewController: UIViewController {
     required init?(coder: NSCoder) {
         self.text = nil
         self.onDismiss = nil
-
         super.init(coder: coder)
     }
 
@@ -47,11 +43,10 @@ class TextFieldViewController: UIViewController {
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
             UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.onSet))
         ]
-        toolbar.sizeToFit()
-
-        textField!.inputAccessoryView = toolbar
+        textField?.inputAccessoryView = toolbar
     }
 
+    //TODO: This works, it just needs to be called every time the characters change, not only just when user presses 'DONE'
     @objc private func onSet() {
         let textField = self.getTextField()
         textField?.resignFirstResponder()
