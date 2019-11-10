@@ -9,14 +9,13 @@
 import UIKit
 import SwiftUI
 
-class TextFieldViewController: UIViewController {
+class TextFieldViewController: UIViewController, UITextFieldDelegate {
     let text: Binding<String>?
     let onDismiss: (() -> Void)?
 
     init (text: Binding<String>, onDismiss: (() -> Void)?) {
         self.text = text
         self.onDismiss = onDismiss
-// NOTE: For the xib connection to work you must create the xib & set it's owner to this file
         super.init( nibName: "TextField", bundle: Bundle.main)
     }
 
@@ -33,6 +32,7 @@ class TextFieldViewController: UIViewController {
 
     override func viewDidLoad() {
         let textField = self.getTextField()
+        textField?.delegate = self
 
         // configure a toolbar with a Done button
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
@@ -46,13 +46,42 @@ class TextFieldViewController: UIViewController {
         textField?.inputAccessoryView = toolbar
     }
 
-    //TODO: This works, it just needs to be called every time the characters change, not only just when user presses 'DONE'
     @objc private func onSet() {
         let textField = self.getTextField()
         textField?.resignFirstResponder()
 
         self.text?.wrappedValue = textField?.text ?? ""
         self.onDismiss?()
+    }
+
+    @objc private func onNext() {
+        let textField = self.getTextField()
+        textField?.resignFirstResponder()
+
+        self.text?.wrappedValue = textField?.text ?? ""
+        self.onDismiss?()
+    }
+
+    @objc private func onPrevious() {
+        let textField = self.getTextField()
+        textField?.resignFirstResponder()
+
+        self.text?.wrappedValue = textField?.text ?? ""
+        self.onDismiss?()
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.text?.wrappedValue = textField.text ?? ""
+    }
+
+    //TODO: Use standard child/parent chaining to iterate through the fields.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let nextField = textField.superview?.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return false
     }
 
 }

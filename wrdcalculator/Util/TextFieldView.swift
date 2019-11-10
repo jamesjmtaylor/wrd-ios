@@ -8,8 +8,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 // The SwiftUI view, wrapping the UITextField
 struct TextFieldView: View {
 
@@ -17,14 +15,15 @@ struct TextFieldView: View {
     var onDismissKeyboard: (() -> Void)?
 
     var body: some View {
-        TextFieldRepresentable(
-            text: self.text
-            , dismissKeyboardCallback: self.onDismissKeyboard
-        ).frame(height: 32, alignment: .leading)
+        TextFieldRepresentable(text: self.text, dismissKeyboardCallback: self.onDismissKeyboard)
+            .frame(height: 32, alignment: .leading)
     }
 }
 
 // The UIViewControllerRepresentable, feeding and controlling the UIViewController
+//SwiftUI provides a protocol called UIViewControllerRepresentable which exposes all the UIKit objects that, to date, have not been natively integrated into SwiftUI.
+//By conforming to this protocol it is possible to construct an object that exposes the content of an UIView natively to SwiftUI.
+//To conform to the protocol two methods must be implemented, 'makeUIViewController' and 'updateUIViewController'.
 struct TextFieldRepresentable: UIViewControllerRepresentable {
 
     // the callback
@@ -42,5 +41,7 @@ struct TextFieldRepresentable: UIViewControllerRepresentable {
         return viewController
     }
 
-    func updateUIViewController(_ viewController: UIViewController, context: Context) {}
+    func updateUIViewController(_ viewController: UIViewController, context: Context) {
+    }
+
 }

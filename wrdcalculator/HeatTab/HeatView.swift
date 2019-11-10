@@ -12,15 +12,18 @@ import Rswift
 struct HeatView: View {
     @ObservedObject var vm: HeatViewModel
     var body: some View {
-        return VStack {
-            Image("heat")
-            InputFieldView(category: Localizable.weaponAp(), input: $vm.ap)
-            InputFieldView(category: Localizable.targetArmor(), input: $vm.targetArmor)
+        return KeyboardHost {
+            VStack {
+                Image("heat").aspectRatio(contentMode: .fit)
+//            InputFieldView(category: Localizable.weaponAp(), input: $vm.ap)
+//            InputFieldView(category: Localizable.targetArmor(), input: $vm.targetArmor)
+
             Text(String(vm.damageString))
             .foregroundColor(Color.white)
             .padding()
-                .background(vm.damageColor)
+            .background(vm.damageColor)
             .frame(maxHeight: .infinity)
+        }
         }
     }
 }

@@ -11,18 +11,18 @@ import Rswift
 
 struct KeView: View {
     @ObservedObject var vm: KeViewModel
+    @State var selectedTag: Int? = nil
+
     var body: some View {
         return KeyboardHost {
             VStack {
             Image("ke")
-            InputFieldView(category: Localizable.weaponAp(), input: $vm.ap)
-            InputFieldView(category: Localizable.targetArmor(), input: $vm.targetArmor)
-            InputFieldView(category: Localizable.weaponRange(), input: $vm.weaponRange)
-            InputFieldView(category: Localizable.targetRange(), input: $vm.targetRange)
-            //TODO:
-            //1. Get 'PREVIOUS`, 'NEXT' & 'DONE' to work (other than dismiss)
-
-
+//TODO: Pass in 'selectedTag' to InputFieldView to make fields focus themselves.
+            InputFieldView(category: Localizable.weaponAp(), input: $vm.ap).tag(0)
+                InputFieldView(category: Localizable.targetArmor(), input: $vm.targetArmor).tag(1)
+            InputFieldView(category: Localizable.weaponRange(), input: $vm.weaponRange).tag(2)
+            InputFieldView(category: Localizable.targetRange(), input: $vm.targetRange).tag(3)
+            //TODO: Get 'PREVIOUS`, 'NEXT' & 'DONE' to work (other than dismiss)
 
             Text(String(vm.damageString))
             .foregroundColor(Color.white)
@@ -33,7 +33,6 @@ struct KeView: View {
         }
     }
 }
-
 
 struct KeView_Previews: PreviewProvider {
     static var previews: some View {

@@ -30,9 +30,9 @@ struct EcmView: View {
             }
             Divider()
 
-            InputFieldView(category: Localizable.accOfAA(), input: $vm.accuracy)
-            InputFieldView(category: Localizable.missilesFired(), input: $vm.missiles)
-            InputFieldView(category: Localizable.desiredHits(), input: $vm.hits)
+//            InputFieldView(category: Localizable.accOfAA(), input: $vm.accuracy)
+//            InputFieldView(category: Localizable.missilesFired(), input: $vm.missiles)
+//            InputFieldView(category: Localizable.desiredHits(), input: $vm.hits)
         }
 
     }
