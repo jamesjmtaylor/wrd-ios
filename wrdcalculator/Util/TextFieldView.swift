@@ -10,12 +10,12 @@ import SwiftUI
 
 // The SwiftUI view, wrapping the UITextField
 struct TextFieldView: View {
-
+    var tag: Int
     var text: Binding<String>
     var onDismissKeyboard: (() -> Void)?
 
     var body: some View {
-        TextFieldRepresentable(text: self.text, dismissKeyboardCallback: self.onDismissKeyboard)
+        TextFieldRepresentable(tag: tag, text: text, dismissKeyboardCallback: self.onDismissKeyboard)
             .frame(height: 32, alignment: .leading)
     }
 }
@@ -32,9 +32,10 @@ struct TextFieldRepresentable: UIViewControllerRepresentable {
     // created in the previous file/gist
     let viewController: TextFieldViewController
 
-    init (text: Binding<String>, dismissKeyboardCallback: (() -> Void)?) {
+    init (tag: Int, text: Binding<String>, dismissKeyboardCallback: (() -> Void)?) {
         self.dismissKeyboardCallback = dismissKeyboardCallback
         self.viewController = TextFieldViewController(text: text, onDismiss: dismissKeyboardCallback)
+        self.viewController.view.tag = tag
     }
 
     func makeUIViewController(context: Context) -> UIViewController {

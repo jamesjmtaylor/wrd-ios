@@ -38,8 +38,8 @@ class TextFieldViewController: UIViewController, UITextFieldDelegate {
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
         toolbar.barStyle = UIBarStyle.default
         toolbar.items = [
-            UIBarButtonItem(title: "Previous", style: UIBarButtonItem.Style.done, target: self , action: #selector(self.onSet)),
-            UIBarButtonItem(title: "Next", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.onSet)),
+            UIBarButtonItem(title: "Previous", style: UIBarButtonItem.Style.done, target: self , action: #selector(self.onPrevious)),
+            UIBarButtonItem(title: "Next", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.onNext)),
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
             UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.onSet))
         ]
@@ -54,34 +54,27 @@ class TextFieldViewController: UIViewController, UITextFieldDelegate {
         self.onDismiss?()
     }
 
-    @objc private func onNext() {
-        let textField = self.getTextField()
-        textField?.resignFirstResponder()
-
-        self.text?.wrappedValue = textField?.text ?? ""
-        self.onDismiss?()
-    }
-
     @objc private func onPrevious() {
-        let textField = self.getTextField()
-        textField?.resignFirstResponder()
+        guard let textField = self.getTextField() else {return}
 
-        self.text?.wrappedValue = textField?.text ?? ""
-        self.onDismiss?()
-    }
-
-    func textFieldDidEndEditing(_ textField: UITextField) {
         self.text?.wrappedValue = textField.text ?? ""
-    }
-
-    //TODO: Use standard child/parent chaining to iterate through the fields.
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let nextField = textField.superview?.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+        let currentTag = textField.superview?.tag ?? 0
+        if let nextField = textField.superview?.superview?.superview?.viewWithTag(currentTag - 1)?.subviews.first as? UITextField {
             nextField.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()
         }
-        return false
     }
 
+    @objc private func onNext() {
+        guard let textField = self.getTextField() else {return}
+
+        self.text?.wrappedValue = textField.text ?? ""
+        let currentTag = textField.superview?.tag ?? 0
+        if let nextField = textField.superview?.superview?.superview?.viewWithTag(currentTag + 1)?.subviews.first as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+    }
 }
