@@ -11,10 +11,15 @@ import SwiftUI
 struct ContactView: View {
     @State private var text = ""
     var body: some View {
-
         ScrollView{
-            TextFieldView(tag: 0, text: $text, onDismissKeyboard: nil)
-            .frame(height: 32, alignment: .leading)
+        VStack(alignment: .leading) {
+            Text("Test")
+            TextField("Test", text: $text)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .keyboardType(.decimalPad)
+
+            Divider()
+        }.padding(.leading)
         }
     }
 }

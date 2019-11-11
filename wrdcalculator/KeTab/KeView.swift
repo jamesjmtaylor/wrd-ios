@@ -16,12 +16,11 @@ struct KeView: View {
         return KeyboardHost {
             VStack {
             Image("ke")
-//TODO: Pass in 'selectedTag' to InputFieldView to make fields focus themselves.
+
             InputFieldView(category: Localizable.weaponAp(), tag: 1, input: $vm.ap)
             InputFieldView(category: Localizable.targetArmor(), tag: 2, input: $vm.targetArmor)
             InputFieldView(category: Localizable.weaponRange(), tag: 3, input: $vm.weaponRange)
             InputFieldView(category: Localizable.targetRange(), tag: 4, input: $vm.targetRange)
-            //TODO: Get 'PREVIOUS`, 'NEXT' & 'DONE' to work (other than dismiss)
 
             Text(String(vm.damageString))
             .foregroundColor(Color.white)

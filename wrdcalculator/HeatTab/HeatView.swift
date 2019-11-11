@@ -14,16 +14,16 @@ struct HeatView: View {
     var body: some View {
         return KeyboardHost {
             VStack {
-                Image("heat").aspectRatio(contentMode: .fit)
-//            InputFieldView(category: Localizable.weaponAp(), input: $vm.ap)
-//            InputFieldView(category: Localizable.targetArmor(), input: $vm.targetArmor)
+                Image("heat")
+            InputFieldView(category: Localizable.weaponAp(), tag: 1, input: $vm.ap)
+            InputFieldView(category: Localizable.targetArmor(), tag: 2, input: $vm.targetArmor)
 
             Text(String(vm.damageString))
             .foregroundColor(Color.white)
             .padding()
             .background(vm.damageColor)
             .frame(maxHeight: .infinity)
-        }
+            }
         }
     }
 }

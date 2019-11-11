@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Combine
+import SwiftUI
 
 class EcmViewModel: ObservableObject  {
     var vet = 0.0
@@ -68,5 +70,15 @@ class EcmViewModel: ObservableObject  {
 
     func ecmClicked(ecm: Double) {
         self.ecm = ecm
+    }
+
+    var chancesColor: Color {
+        var color : UIColor? // default to white
+        if let c = Double(chancesString.split(separator: " ").last ?? "") {
+            if c >= 50 { color = R.color.favorite() }
+            else if c == 0 { color = R.color.dark()  }
+            else if c < 50 { color = R.color.danger() }
+        }
+        return Color(color ?? UIColor.white)
     }
 }

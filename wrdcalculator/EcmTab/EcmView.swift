@@ -24,19 +24,28 @@ struct EcmView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding(.trailing,16)
+            InputFieldView(category: Localizable.accOfAA(), tag: 1, input: $vm.accuracy)
+            InputFieldView(category: Localizable.missilesFired(), tag: 2, input: $vm.missiles)
+            InputFieldView(category: Localizable.desiredHits(), tag: 3, input: $vm.hits)
+            Text(String(vm.chancesString))
+            .foregroundColor(Color.white)
+            .padding()
+            .background(vm.chancesColor)
+            .frame(maxHeight: .infinity)
+            }
             //TODO: See for creating buttons from an array https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-views-in-a-loop-using-foreach
             ForEach((1...10), id: \.self) {
                 Text("\($0)")
             }
+
             Divider()
 
-//            InputFieldView(category: Localizable.accOfAA(), input: $vm.accuracy)
-//            InputFieldView(category: Localizable.missilesFired(), input: $vm.missiles)
-//            InputFieldView(category: Localizable.desiredHits(), input: $vm.hits)
+
+
         }
 
     }
-}
+
 
 struct EcmView_Previews: PreviewProvider {
     static var previews: some View {
