@@ -44,5 +44,4 @@ struct TextFieldRepresentable: UIViewControllerRepresentable {
 
     func updateUIViewController(_ viewController: UIViewController, context: Context) {
     }
-
 }

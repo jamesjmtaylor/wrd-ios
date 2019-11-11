@@ -11,23 +11,24 @@ import SwiftUI
 struct KeyboardHost<Content: View>: View {
     let view: Content
 
-    @State private var keyboardHeight: CGFloat = 0
+    /// The current height of the keyboard rect.
+    @State private var keyboardHeight = CGFloat(0)
 
-    private let showPublisher = NotificationCenter.Publisher.init(
-        center: .default,
-        name: UIResponder.keyboardWillShowNotification
-    ).map { (notification) -> CGFloat in
-        if let rect = notification.userInfo?["UIKeyboardFrameEndUserInfoKey"] as? CGRect {
-            return rect.size.height
-        } else {
-            return 0
-        }
-    }
+    /// A publisher that combines all of the relevant keyboard changing notifications and maps them into a `CGFloat` representing the new height of the
+    /// keyboard rect.
+    private let keyboardChangePublisher = NotificationCenter.Publisher(center: .default,
+                                                                       name: UIResponder.keyboardWillShowNotification)
+        .merge(with: NotificationCenter.Publisher(center: .default,
+                                                  name: UIResponder.keyboardWillChangeFrameNotification))
+        .merge(with: NotificationCenter.Publisher(center: .default,
+                                                  name: UIResponder.keyboardWillHideNotification)
+        .map { Notification(name: $0.name, object: $0.object, userInfo: nil) })
+        .map { ($0.userInfo?[UIWindow.keyboardFrameEndUserInfoKey] as? CGRect ?? .zero).size.height }
 
-    private let hidePublisher = NotificationCenter.Publisher.init(
-        center: .default,
-        name: UIResponder.keyboardWillHideNotification
-    ).map {_ -> CGFloat in 0}
+//    private let hidePublisher = NotificationCenter.Publisher.init(
+//        center: .default,
+//        name: UIResponder.keyboardWillHideNotification
+//    ).map {_ -> CGFloat in 0}
 
     // Like HStack or VStack, the only parameter is the view that this view should layout.
     // (It takes one view rather than the multiple views that Stacks can take)
@@ -36,14 +37,11 @@ struct KeyboardHost<Content: View>: View {
     }
 
     var body: some View {
-        VStack {
+
             view
-            Rectangle()
-                .frame(height: keyboardHeight)
-                .animation(.default)
-                .foregroundColor(.clear)
-        }.onReceive(showPublisher.merge(with: hidePublisher)) { (height) in
-            self.keyboardHeight = height
-        }
+            .onReceive(keyboardChangePublisher) { self.keyboardHeight = $0 }
+            .padding(.bottom, keyboardHeight)
+            .animation(.default)
+
     }
 }

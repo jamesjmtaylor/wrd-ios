@@ -11,7 +11,6 @@ import Rswift
 
 struct KeView: View {
     @ObservedObject var vm: KeViewModel
-    @State var selectedTag: Int? = nil
 
     var body: some View {
         return KeyboardHost {

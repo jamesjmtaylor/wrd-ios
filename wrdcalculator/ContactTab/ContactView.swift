@@ -9,8 +9,13 @@
 import SwiftUI
 
 struct ContactView: View {
+    @State private var text = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+
+        ScrollView{
+            TextFieldView(tag: 0, text: $text, onDismissKeyboard: nil)
+            .frame(height: 32, alignment: .leading)
+        }
     }
 }
 
