@@ -17,32 +17,68 @@ struct ListButton: Identifiable {
 struct EcmView: View {
     @ObservedObject var vm: EcmViewModel
 
-
     var body: some View {
-        return VStack {
-            Image("sam")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .padding(.trailing,16)
-            InputFieldView(category: Localizable.accOfAA(), tag: 1, input: $vm.accuracy)
-            InputFieldView(category: Localizable.missilesFired(), tag: 2, input: $vm.missiles)
-            InputFieldView(category: Localizable.desiredHits(), tag: 3, input: $vm.hits)
-            Text(String(vm.chancesString))
-            .foregroundColor(Color.white)
-            .padding()
-            .background(vm.chancesColor)
-            .frame(maxHeight: .infinity)
-            }
-            //TODO: See for creating buttons from an array https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-views-in-a-loop-using-foreach
-            ForEach((1...10), id: \.self) {
-                Text("\($0)")
-            }
+                return KeyboardHost {
+                    ScrollView {
+                        Image("sam").aspectRatio(contentMode: .fit)
 
-            Divider()
+                    InputFieldView(category: Localizable.accOfAA(), tag: 1, input: $vm.accuracy)
+                    InputFieldView(category: Localizable.missilesFired(), tag: 2, input: $vm.missiles)
+                    InputFieldView(category: Localizable.desiredHits(), tag: 3, input: $vm.hits)
+VStack {
+                        Text("Veterency of AA")
 
+                    HStack{
+                    ForEach(vm.veterencyValues1, id: \.self) {
+                        Button("\($0)", action: {})
+                            .frame(maxWidth: .infinity)
+                        .padding()
+                            .background(self.vm.buttonColor)
+                        .foregroundColor(.black)
+                        .cornerRadius(5)
 
+                    }}.padding()
+                    HStack{
+                        ForEach(vm.veterencyValues2, id: \.self) {
+                        Button("\($0)", action: {})
+                            .frame(maxWidth: .infinity)
+                        .padding()
+                         .background(self.vm.buttonColor)
+                        .foregroundColor(.black)
+                        .cornerRadius(5)
+                        }}.padding(.leading).padding(.trailing)
+    Divider()
+    Text("ECM of Aircraft")
+                    HStack{
+                    ForEach(vm.ecmValues1, id: \.self) {
+                        Button("\($0)", action: {})
+                            .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(self.vm.buttonColor)
+                        .foregroundColor(.black)
+                        .cornerRadius(5)
+                    }}.padding()
+                    HStack{
+                    ForEach(vm.ecmValues2, id: \.self) {
+                        Button("\($0)", action: {})
+                            .frame(maxWidth: .infinity)
+                        .padding()
+                            .background(self.vm.buttonColor)
+                        .foregroundColor(.black)
+                        .cornerRadius(5)
+                        }}.padding(.leading).padding(.trailing)
 
-        }
+    Divider()}
+
+                    Text(String(vm.chancesString))
+                    .foregroundColor(Color.white)
+                    .padding()
+                    .background(vm.chancesColor)
+                    .frame(maxHeight: .infinity)
+}
+                }
+
+    }
 
     }
 

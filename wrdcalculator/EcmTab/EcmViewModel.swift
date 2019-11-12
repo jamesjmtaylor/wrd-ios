@@ -11,6 +11,12 @@ import Combine
 import SwiftUI
 
 class EcmViewModel: ObservableObject  {
+    let veterencyValues1 = [Localizable.rookie(),Localizable.trained(),Localizable.hardened()]
+    let veterencyValues2 = [Localizable.veteran(),Localizable.elite()]
+
+    let ecmValues1 = ["0%","10%","20%","30%"]
+    let ecmValues2 = ["40%","50%","60%"]
+
     var vet = 0.0
     var ecm = 100.0
     @Published var accuracy = ""
@@ -30,6 +36,46 @@ class EcmViewModel: ObservableObject  {
         return Localizable.chancesPrefix() + "\((c > 100) ? 100 : c)%"
     }
 
+    var chancesColor: Color {
+        var color : UIColor? // default to white
+        let chances = chancesString.split(separator: " ").last?.dropLast()
+        if let c = Double(chances ?? "") {
+            if c >= 50 { color = R.color.favorite() }
+            else if c == 0 { color = R.color.primary()  }
+            else if c < 50 { color = R.color.danger() }
+        }
+        return Color(color ?? UIColor.white)
+    }
+
+//    var buttonColor: Color {
+//        willSet(currentName) // custom parameter name is used
+//        {
+//         print(" current name is about to set in property name ")
+//        }
+//    }
+
+    var buttonColor: Color {
+        get {
+        var color : UIColor? // default to white
+        if (toggled) {
+            color = R.color.button()
+        } else {
+            color = R.color.primary()
+        }
+        return Color(color ?? UIColor.white)
+        }
+    }
+
+    var toggled = false
+    func vetClicked(veterancy: String) {
+        toggled = !toggled
+        vet = 0;
+    }
+
+    func ecmClicked(ecm: String) {
+        toggled = !toggled
+        self.ecm = 0
+    }
     private func productRange(a: Double, b: Double) -> Double {
         var product = a, i = a;
 
@@ -64,21 +110,4 @@ class EcmViewModel: ObservableObject  {
         return ret;
     }
 
-    func vetClicked(veterancy: Double) {
-        vet = veterancy;
-    }
-
-    func ecmClicked(ecm: Double) {
-        self.ecm = ecm
-    }
-
-    var chancesColor: Color {
-        var color : UIColor? // default to white
-        if let c = Double(chancesString.split(separator: " ").last ?? "") {
-            if c >= 50 { color = R.color.favorite() }
-            else if c == 0 { color = R.color.dark()  }
-            else if c < 50 { color = R.color.danger() }
-        }
-        return Color(color ?? UIColor.white)
-    }
 }
