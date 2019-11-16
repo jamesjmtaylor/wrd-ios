@@ -20,7 +20,7 @@ struct InputFieldView: View {
     var body: some View {
         return VStack(alignment: .leading) {
             Text(category)
-            TextFieldView(tag: tag, text: input, onDismissKeyboard: nil)
+            TextFieldView(tag: tag, hint: category, text: input, onDismissKeyboard: nil)
                 .padding(.trailing)
                 .accentColor(.black)
             Divider()

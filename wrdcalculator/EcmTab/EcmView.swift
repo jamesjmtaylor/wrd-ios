@@ -19,68 +19,35 @@ struct EcmView: View {
 
     var body: some View {
                 return KeyboardHost {
-                    ScrollView {
+                    VStack {
                         Image("sam").aspectRatio(contentMode: .fit)
 
+                    VStack(alignment: .leading) {
+                    Text(Localizable.vetOfAA()).padding(.leading)
+                    Picker(Localizable.vetOfAA(),selection: $vm.selectedVet) {
+                        ForEach(0 ..< self.vm.veterencyValues.count) {
+                            Text(self.vm.veterencyValues[$0])
+                        }
+                    }.pickerStyle(SegmentedPickerStyle())
+                    Text(Localizable.ecmAttackedAircraft()).padding(.leading)
+                        Picker(Localizable.ecmAttackedAircraft(),selection: $vm.selectedEcm) {
+                            ForEach(0 ..< self.vm.ecmValues.count) {
+                                Text(self.vm.ecmValues[$0])
+                        }
+                    }.pickerStyle(SegmentedPickerStyle())
+                        }
                     InputFieldView(category: Localizable.accOfAA(), tag: 1, input: $vm.accuracy)
                     InputFieldView(category: Localizable.missilesFired(), tag: 2, input: $vm.missiles)
                     InputFieldView(category: Localizable.desiredHits(), tag: 3, input: $vm.hits)
-VStack {
-                        Text("Veterency of AA")
-
-                    HStack{
-                    ForEach(vm.veterencyValues1, id: \.self) {
-                        Button("\($0)", action: {})
-                            .frame(maxWidth: .infinity)
-                        .padding()
-                            .background(self.vm.buttonColor)
-                        .foregroundColor(.black)
-                        .cornerRadius(5)
-
-                    }}.padding()
-                    HStack{
-                        ForEach(vm.veterencyValues2, id: \.self) {
-                        Button("\($0)", action: {})
-                            .frame(maxWidth: .infinity)
-                        .padding()
-                         .background(self.vm.buttonColor)
-                        .foregroundColor(.black)
-                        .cornerRadius(5)
-                        }}.padding(.leading).padding(.trailing)
-    Divider()
-    Text("ECM of Aircraft")
-                    HStack{
-                    ForEach(vm.ecmValues1, id: \.self) {
-                        Button("\($0)", action: {})
-                            .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(self.vm.buttonColor)
-                        .foregroundColor(.black)
-                        .cornerRadius(5)
-                    }}.padding()
-                    HStack{
-                    ForEach(vm.ecmValues2, id: \.self) {
-                        Button("\($0)", action: {})
-                            .frame(maxWidth: .infinity)
-                        .padding()
-                            .background(self.vm.buttonColor)
-                        .foregroundColor(.black)
-                        .cornerRadius(5)
-                        }}.padding(.leading).padding(.trailing)
-
-    Divider()}
-
                     Text(String(vm.chancesString))
                     .foregroundColor(Color.white)
                     .padding()
                     .background(vm.chancesColor)
                     .frame(maxHeight: .infinity)
+            }
+        }
+    }
 }
-                }
-
-    }
-
-    }
 
 
 struct EcmView_Previews: PreviewProvider {

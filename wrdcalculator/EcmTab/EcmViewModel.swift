@@ -11,17 +11,29 @@ import Combine
 import SwiftUI
 
 class EcmViewModel: ObservableObject  {
-    let veterencyValues1 = [Localizable.rookie(),Localizable.trained(),Localizable.hardened()]
-    let veterencyValues2 = [Localizable.veteran(),Localizable.elite()]
+    let veterencyValues = [Localizable.rookie(),Localizable.trained(),Localizable.hardened(),Localizable.veteran(),Localizable.elite()]
+    let ecmValues = ["0%","10%","20%","30%","40%","50%","60%"]
 
-    let ecmValues1 = ["0%","10%","20%","30%"]
-    let ecmValues2 = ["40%","50%","60%"]
-
-    var vet = 0.0
-    var ecm = 100.0
+    @Published var selectedVet = 0
+    @Published var selectedEcm = 0
     @Published var accuracy = ""
     @Published var missiles = ""
     @Published var hits = ""
+
+    private lazy var vet: () -> Double = {
+        switch self.veterencyValues[self.selectedVet] {
+        case Localizable.rookie(): return  1
+        case Localizable.trained(): return  1.08
+        case Localizable.hardened(): return 1.16
+        case Localizable.veteran(): return  1.24
+        case Localizable.elite(): return  1.32
+        default: return  0
+        }
+    }
+
+    private lazy var ecm = {
+        (Double(self.ecmValues[self.selectedEcm].dropLast().description) ?? 0) / 100.0
+    }
 
     var chancesString : String {
         guard let accuracy = Double(accuracy),
@@ -29,8 +41,8 @@ class EcmViewModel: ObservableObject  {
         let hits = Double(hits)
         else { return Localizable.chancesPrefix() + "0%" }
         let hitRate = accuracy/100
-            * vet
-            * (1 - ecm)
+            * vet()
+            * (1 - ecm())
 
         let c = round(bpAtLeast(f: missiles, h: hits, hitRate: hitRate) * 100.0);
         return Localizable.chancesPrefix() + "\((c > 100) ? 100 : c)%"
@@ -47,35 +59,6 @@ class EcmViewModel: ObservableObject  {
         return Color(color ?? UIColor.white)
     }
 
-//    var buttonColor: Color {
-//        willSet(currentName) // custom parameter name is used
-//        {
-//         print(" current name is about to set in property name ")
-//        }
-//    }
-
-    var buttonColor: Color {
-        get {
-        var color : UIColor? // default to white
-        if (toggled) {
-            color = R.color.button()
-        } else {
-            color = R.color.primary()
-        }
-        return Color(color ?? UIColor.white)
-        }
-    }
-
-    var toggled = false
-    func vetClicked(veterancy: String) {
-        toggled = !toggled
-        vet = 0;
-    }
-
-    func ecmClicked(ecm: String) {
-        toggled = !toggled
-        self.ecm = 0
-    }
     private func productRange(a: Double, b: Double) -> Double {
         var product = a, i = a;
 
@@ -104,10 +87,11 @@ class EcmViewModel: ObservableObject  {
         var ret = 0.0
         let hits = Int(h)
         let fired = Int(f)
-        for hits in hits ... fired {
-            ret += binomProbability(f: f, h: Double(hits), hitRate: hitRate);
+        if hits > fired {return 0}
+        for desiredHits in hits ... fired {
+            ret += binomProbability(f: f, h: Double(desiredHits), hitRate: hitRate);
         }
-        return ret;
+        return ret
     }
 
 }

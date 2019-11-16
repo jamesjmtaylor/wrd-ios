@@ -11,16 +11,19 @@ import SwiftUI
 
 class TextFieldViewController: UIViewController, UITextFieldDelegate {
     let text: Binding<String>?
+    let hint: String?
     let onDismiss: (() -> Void)?
 
-    init (text: Binding<String>, onDismiss: (() -> Void)?) {
+    init (text: Binding<String>, hint: String?, onDismiss: (() -> Void)?) {
         self.text = text
+        self.hint = hint
         self.onDismiss = onDismiss
         super.init( nibName: "TextField", bundle: Bundle.main)
     }
 
     required init?(coder: NSCoder) {
         self.text = nil
+        self.hint = nil
         self.onDismiss = nil
         super.init(coder: coder)
     }
@@ -32,6 +35,7 @@ class TextFieldViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         let textField = self.getTextField()
+        textField?.placeholder = self.hint
         textField?.delegate = self
 
         // configure a toolbar with a Done button
