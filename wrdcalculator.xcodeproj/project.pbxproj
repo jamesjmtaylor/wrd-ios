@@ -13,6 +13,7 @@
 		8F08A9EE2371AD6800161BDF /* TextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F08A9ED2371AD6800161BDF /* TextField.xib */; };
 		8F08A9F02371AE8300161BDF /* UIView+LoadNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08A9EF2371AE8300161BDF /* UIView+LoadNib.swift */; };
 		8F5DA3C823730359002B9F45 /* KeyboardHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5DA3C723730359002B9F45 /* KeyboardHost.swift */; };
+		8F649F972380493F0063DD05 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F649F962380493F0063DD05 /* WebView.swift */; };
 		8F7DB4B3234F5A3B005D93ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4B2234F5A3B005D93ED /* AppDelegate.swift */; };
 		8F7DB4B5234F5A3B005D93ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4B4234F5A3B005D93ED /* SceneDelegate.swift */; };
 		8F7DB4B7234F5A3B005D93ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB4B6234F5A3B005D93ED /* ContentView.swift */; };
@@ -25,8 +26,6 @@
 		8FC01FFA2361D145005D1AE5 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC01FF92361D145005D1AE5 /* HostingController.swift */; };
 		8FC879BA236F60AB00268C02 /* InputButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC879B9236F60AB00268C02 /* InputButtonRow.swift */; };
 		8FCEBAB82350AA4C00A726E7 /* HeatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBAB72350AA4C00A726E7 /* HeatViewModel.swift */; };
-		8FCEBABB2350AA5800A726E7 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBABA2350AA5800A726E7 /* ContactViewModel.swift */; };
-		8FCEBABC2350AA5800A726E7 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBABA2350AA5800A726E7 /* ContactViewModel.swift */; };
 		8FCEBABE2350AA6200A726E7 /* EcmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBABD2350AA6200A726E7 /* EcmViewModel.swift */; };
 		8FCEBAC12350AA6A00A726E7 /* KeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEBAC02350AA6A00A726E7 /* KeViewModel.swift */; };
 		8FEF748B236710F500850F6B /* EcmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEF748A236710F500850F6B /* EcmView.swift */; };
@@ -63,6 +62,7 @@
 		8F08A9ED2371AD6800161BDF /* TextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextField.xib; sourceTree = "<group>"; };
 		8F08A9EF2371AE8300161BDF /* UIView+LoadNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LoadNib.swift"; sourceTree = "<group>"; };
 		8F5DA3C723730359002B9F45 /* KeyboardHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHost.swift; sourceTree = "<group>"; };
+		8F649F962380493F0063DD05 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		8F7DB4AF234F5A3B005D93ED /* wrdcalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wrdcalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7DB4B2234F5A3B005D93ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F7DB4B4234F5A3B005D93ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,7 +81,6 @@
 		8FC01FF92361D145005D1AE5 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		8FC879B9236F60AB00268C02 /* InputButtonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputButtonRow.swift; sourceTree = "<group>"; };
 		8FCEBAB72350AA4C00A726E7 /* HeatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatViewModel.swift; sourceTree = "<group>"; };
-		8FCEBABA2350AA5800A726E7 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		8FCEBABD2350AA6200A726E7 /* EcmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcmViewModel.swift; sourceTree = "<group>"; };
 		8FCEBAC02350AA6A00A726E7 /* KeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeViewModel.swift; sourceTree = "<group>"; };
 		8FEF748A236710F500850F6B /* EcmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcmView.swift; sourceTree = "<group>"; };
@@ -183,8 +182,8 @@
 		8F3F37A1235D3B8E00E0B2DA /* ContactTab */ = {
 			isa = PBXGroup;
 			children = (
-				8FCEBABA2350AA5800A726E7 /* ContactViewModel.swift */,
 				8FEF748C2367110100850F6B /* ContactView.swift */,
+				8F649F962380493F0063DD05 /* WebView.swift */,
 			);
 			path = ContactTab;
 			sourceTree = "<group>";
@@ -476,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FF5459C235B65250035BC6C /* HeatView.swift in Sources */,
+				8F649F972380493F0063DD05 /* WebView.swift in Sources */,
 				8FCEBAB82350AA4C00A726E7 /* HeatViewModel.swift in Sources */,
 				8FEF74902367190800850F6B /* R.generated.swift in Sources */,
 				8FC879BA236F60AB00268C02 /* InputButtonRow.swift in Sources */,
@@ -484,7 +484,6 @@
 				8F7DB4B3234F5A3B005D93ED /* AppDelegate.swift in Sources */,
 				8FF5459A235B5E200035BC6C /* KeView.swift in Sources */,
 				8F08A9F02371AE8300161BDF /* UIView+LoadNib.swift in Sources */,
-				8FCEBABB2350AA5800A726E7 /* ContactViewModel.swift in Sources */,
 				8F08A9EC2371ABA200161BDF /* TextFieldView.swift in Sources */,
 				8F7DB4B5234F5A3B005D93ED /* SceneDelegate.swift in Sources */,
 				8FCEBAC12350AA6A00A726E7 /* KeViewModel.swift in Sources */,
@@ -502,7 +501,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FCEBABC2350AA5800A726E7 /* ContactViewModel.swift in Sources */,
 				8F7DB4CA234F5A3C005D93ED /* wrdcalculatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,11 +11,8 @@ import SwiftUI
 struct ContentView: View {
 //    @State private var selection = 0
     init(){
-//        UITabBar.appearance().backgroundColor =  .red
         UITabBar.appearance().barTintColor = R.color.toolbarBackground() ?? .red
-//        UITabBar.appearance().tintColor = .red
         UITabBar.appearance().unselectedItemTintColor = R.color.toolbarInactive() ??  UIColor.white
-
     }
 
     var body: some View {

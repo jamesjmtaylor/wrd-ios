@@ -9,17 +9,11 @@
 import SwiftUI
 
 struct ContactView: View {
-    @State private var text = ""
+    let homepage = URLRequest(url: URL(string: "https://www.jjmtaylor.com")!)
     var body: some View {
-        ScrollView{
-        VStack(alignment: .leading) {
-            Text("Test")
-            TextField("Test", text: $text)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .keyboardType(.decimalPad)
-
-            Divider()
-        }.padding(.leading)
+        return ZStack{
+            Text("Loading")
+            WebView(request: homepage).edgesIgnoringSafeArea(.top)
         }
     }
 }
